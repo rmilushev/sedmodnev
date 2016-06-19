@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: sedmodnev_production
-  username: sedmodnev
-  password: <%= ENV['SEDMODNEV_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: sedmodnev_production
+#   username: sedmodnev
+#   password: <%= ENV['SEDMODNEV_DATABASE_PASSWORD'] %>
