@@ -1,0 +1,18 @@
+!!!
+%html{:lang => "bg"}
+
+  %head{:prefix => "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# business: http://ogp.me/ns/business#"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+
+    -# = render 'layouts/metatags'
+    %title= content_for?(:title) ? yield(:title) : "Burgas Reporter - your single point of truth"
+    %meta{name: "description", content: "#{content_for?(:description) ? yield(:description) : 'Burgas-reporter.com'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = render 'layouts/fonts'
+    = csrf_meta_tags
+  %body
+    = render 'layouts/nav_bar'
+    = render 'layouts/messages'
+    = yield
+    = render 'layouts/google_a'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
