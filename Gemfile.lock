@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: b31f7ce006bade550be0ad946d0b993b799358e3
+  specs:
+    carrierwave (0.11.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/plataformatec/simple_form.git
   revision: 6f537ed98e0fb7a50977a101d1da92dc0696031e
   branch: master
@@ -277,6 +286,7 @@ DEPENDENCIES
   capistrano-rails-console
   capistrano-rbenv
   capybara-webkit
+  carrierwave!
   coffee-rails (~> 4.1.0)
   devise
   factory_girl_rails
