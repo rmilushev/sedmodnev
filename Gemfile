@@ -25,10 +25,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
+gem 'simple_form', '~> 3.2.1', github: 'plataformatec/simple_form',
+                               branch: 'master'
 gem 'unicorn'
+gem 'unicorn-rails'
+gem 'font-awesome-rails'
 gem 'figaro'
-# Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+gem 'haml-rails'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
@@ -46,4 +50,9 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rbenv'
 end
