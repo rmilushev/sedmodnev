@@ -1,6 +1,6 @@
 if Rails.env.production?
   CarrierWave.configure do |config|
-    config.storage = :fog
+    config.storage = 'fog/rackspace/storage'
     config.fog_directory = ENV["fog_dir"]
     config.asset_host = ENV["asset_host"]
     config.fog_credentials = {
