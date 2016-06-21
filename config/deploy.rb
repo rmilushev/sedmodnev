@@ -4,14 +4,12 @@ set :deploy_user, 'deployer'
 # setup repo details
 set :scm, :git
 set :repo_url, 'https://github.com/rmilushev/sedmodnev.git'
-
 # setup rbenv.
 set :rbenv_type, :system
-set :rbenv_ruby, "2.2.3"
-set :rbenv_path, "~/.rbenv"
-set :default_env, path: "~/.rbenv/shims:~/.rbenv/bin:$PATH"
+set :rbenv_ruby, '2.2.3'
+set :rbenv_path, '~/.rbenv'
+set :default_env, path: '~/.rbenv/shims:~/.rbenv/bin:$PATH'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-
 
 set :rbenv_map_bins, %w( rake gem bundle ruby rails )
 # how many old releases do we want to keep, not much

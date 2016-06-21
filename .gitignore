@@ -14,3 +14,5 @@
 
 # Ignore application configuration
 /config/application.yml
+# Ignore deploy configuration for production
+/config/deploy/production.rb
