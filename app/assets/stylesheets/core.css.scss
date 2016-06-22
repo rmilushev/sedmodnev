@@ -94,7 +94,7 @@ $ftrblue: #445d95;
   display: table;
 }
 .banner-slider {
-  // background: url(asset-path('bg-1.jpg')) no-repeat center center scroll;
+  background: url(asset-path('nrep.jpg')) no-repeat center center scroll;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -238,4 +238,15 @@ a:hover {
 .brand-item img:hover {
   filter: none;
   -webkit-filter: grayscale(0);
+}
+
+.intro {
+  display: block;
+  // background: url(asset-path('nrep.jpg')) no-repeat center center scroll;
+  border: solid 3px red;
+  background-color: $bblue;
+  // background-size: cover;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
 }
