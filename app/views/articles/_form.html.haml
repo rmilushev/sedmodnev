@@ -1,9 +1,7 @@
 = form_for(@article) do |f|
   .container
     .form-inputs
-      = f.label :title
       = f.text_field :title
-      = f.label :content
       = f.trix_editor :content
       -# = f.input :published
       -# = f.input :picture, as: :file
