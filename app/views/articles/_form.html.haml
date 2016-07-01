@@ -1,14 +1,15 @@
-= simple_form_for(@article) do |f|
-  = f.error_notification
+= form_for(@article) do |f|
+  .container
+    .form-inputs
+      = f.label :title
+      = f.text_field :title
+      = f.label :content
+      = f.trix_editor :content
+      -# = f.input :published
+      -# = f.input :picture, as: :file
+      -# = f.input :author_id
+      -# = f.input :category_id
+      -# = f.input :golive
 
-  .form-inputs
-    = f.input :title
-    = f.input :content
-    -# = f.input :published
-    = f.input :picture, as: :file
-    -# = f.input :author_id
-    -# = f.input :category_id
-    -# = f.input :golive
-
-  .form-actions
-    = f.button :submit
+    .form-actions
+      = f.submit

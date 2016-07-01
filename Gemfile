@@ -37,7 +37,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
-gem 'redactor-rails'
+gem 'trix'
 gem 'fog', require: 'fog/rackspace'
 gem 'high_voltage'
 
