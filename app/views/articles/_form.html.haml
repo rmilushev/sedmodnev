@@ -1,8 +1,9 @@
 = form_for(@article) do |f|
-  .alert.alert-danger
-    %ul
-      - @article.errors.full_messages.each do |err|
-        %li= err
+  - if @article.errors.any?
+    .alert.alert-danger
+      %ul
+        - @article.errors.full_messages.each do |err|
+          %li= err
   .container
     .form-inputs
       = f.text_field :title
