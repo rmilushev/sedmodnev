@@ -1,4 +1,4 @@
 class Article < ActiveRecord::Base
-  validates :title, :content, presence: true
+  validates :title, presence: true
   attachment :article_image
 end
