@@ -1,5 +1,8 @@
 /*
+*= require core
 *= require trix
+*= require_tree .
+*= require_self
 */
 
 @import "bootstrap-sprockets";
