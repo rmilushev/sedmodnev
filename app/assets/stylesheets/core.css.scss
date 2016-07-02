@@ -260,11 +260,15 @@ a:hover {
   // -o-background-size: cover;
 }
 
-.art-content p {
-  font-family: serif, "Times New Roman", "Times";
+.art-content {
+  font-family: "Playfair Display";
   font-weight: 400;
   font-size: 21px;
   line-height: 1.58;
   letter-spacing: -.003em;
-  color: #b3b3b1;
+  // color: #b3b3b1;
+}
+
+.art {
+  // border: solid 2px blue;
 }
