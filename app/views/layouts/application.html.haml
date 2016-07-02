@@ -13,6 +13,7 @@
   %body
     = render 'layouts/nav_bar'
     = render 'layouts/messages'
-    = yield
+    .container
+      = yield
     = render 'layouts/google_a'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true

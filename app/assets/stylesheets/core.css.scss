@@ -5,6 +5,15 @@ $ochra: #d4b98c;
 $darksea: #104a78;
 $thblue: #3498db;
 $ftrblue: #445d95;
+$bg: #f7f8fb;
+$content: #393f42;
+$copy: #727678;
+$accent: #50bbf2;
+$secondary: #cedce4;
+
+body {
+  background: $bg;
+}
 .brand-logo {
   @media only screen and (max-width : 420px) {
     width: 78px;

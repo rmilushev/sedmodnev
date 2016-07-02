@@ -1,4 +1,4 @@
 class Article < ActiveRecord::Base
   validates :title, :content, presence: true
-  mount_uploader :picture, ArticleUploader
+  attachment :article_image
 end
