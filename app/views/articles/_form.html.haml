@@ -9,7 +9,7 @@
       = f.text_field :title
       = f.attachment_field :article_image
       = f.label :content
-      = f.trix_editor :content
+      = f.trix_editor(:content, placeholder: 'default text')
       -# = f.input :published
       -# = f.input :picture, as: :file
       -# = f.input :author_id
