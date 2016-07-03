@@ -263,14 +263,15 @@ a:hover {
 .art-content {
   font-family: "Roboto Slab";
   font-weight: 400;
+  @media only screen and (min-width : 420px) {
   font-size: 21px;
   line-height: 1.58;
+  }
+  @media only screen and (max-width : 420px) {
+    font-size: 18px;
+    line-height: 27px;
+  }
   letter-spacing: -.003em;
-  // color: #b3b3b1;
   color: rgba(0,0,0,.8);
   max-width: 700px;
-}
-
-.art {
-  // border: solid 2px blue;
 }
