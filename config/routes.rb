@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'images/create'
+
   resources :articles
   devise_for :admins
   devise_scope :admin do
