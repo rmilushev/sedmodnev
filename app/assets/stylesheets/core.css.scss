@@ -1,3 +1,4 @@
+
 $white_opaque: rgba(250, 250, 250, .3);
 $dark: #1F7972;
 $bblue: #3eb2d8;
@@ -263,9 +264,23 @@ body {
   }
   @media only screen and (max-width : 420px) {
     font-size: 18px;
-    line-height: 27px;
+    line-height: 1.35;
   }
   letter-spacing: -.003em;
   color: rgba(0,0,0,.8);
   max-width: 700px;
+}
+
+.attachment.attachment-preview img {
+  height: 400px;
+  max-width: 100%;
+}
+
+.artshow {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flxebox;
+  display: -webkit-flex;
+  justify-content: center;
 }
