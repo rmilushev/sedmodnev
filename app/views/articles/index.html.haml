@@ -9,6 +9,3 @@
             =image_tag attachment_url(art, :article_image, :fill, 400, 250)
         -# .col-md-8.col-sm-6.col-xs-12.art-content
           -# %p= art.content.html_safe
-      - if admin_signed_in?
-        = link_to t(:edit_article), edit_article_path(art), class: 'btn btn-warning'
-        = link_to t(:delete_article), art, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}

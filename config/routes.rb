@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images, only: [:create, :destroy]
   resources :articles
   devise_for :admins
   devise_scope :admin do
