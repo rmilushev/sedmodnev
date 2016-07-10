@@ -1,7 +1,7 @@
 .artshow
   .art-show-wrap
     %p#notice= notice
-    %h1= @article.title
+    %h2= @article.title
     .artcl-image
       =image_tag attachment_url(@article, :article_image, :fit, 600, 300)
     .art-content

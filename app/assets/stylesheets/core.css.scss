@@ -259,7 +259,7 @@ body {
   font-family: "Roboto Slab";
   font-weight: 400;
   @media only screen and (min-width : 420px) {
-  font-size: 21px;
+  font-size: 19px;
   line-height: 1.58;
   }
   @media only screen and (max-width : 420px) {
@@ -283,4 +283,8 @@ body {
   display: -ms-flxebox;
   display: -webkit-flex;
   justify-content: center;
+}
+
+.art-image {
+  margin-top: 20px;
 }
