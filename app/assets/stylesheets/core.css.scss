@@ -261,14 +261,15 @@ body {
   @media only screen and (min-width : 420px) {
   font-size: 19px;
   line-height: 1.58;
+  max-width: 700px;
   }
   @media only screen and (max-width : 420px) {
     font-size: 18px;
     line-height: 1.35;
+    max-width: 98%;
   }
   letter-spacing: -.003em;
   color: rgba(0,0,0,.8);
-  max-width: 700px;
 }
 
 .attachment.attachment-preview img {
