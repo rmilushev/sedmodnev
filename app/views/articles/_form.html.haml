@@ -6,7 +6,10 @@
           %li= err
   .container
     .form-inputs
-      = f.text_field :title
+      = f.label :title
+      = f.text_field :title, size: 160
+      %br
+      = f.label :article_image
       = f.attachment_field :article_image
       = f.label :content
       = f.trix_editor :content
