@@ -1,11 +1,13 @@
 .artshow
   .art-show-wrap
     %p#notice= notice
-    %h2= @article.title
+    %h2
+      =h raw @article.title
     .artcl-image
       =image_tag attachment_url(@article, :article_image, :fit, 600, 300)
     .art-content
-      %p= @article.content.html_safe
+      %p
+        =h raw  @article.content
     - if admin_signed_in?
       = link_to t(:edit_article), edit_article_path(@article), class: 'btn btn-warning'
       = link_to t(:delete_article), @article, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
