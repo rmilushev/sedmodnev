@@ -1,8 +1,9 @@
 - content_for :head do
   = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
-  = tag :meta, property: "og:site_name", content: "Your single point of truth"
+  = tag :meta, property: "og:url", content: "burgas-reporter.com"
   = tag :meta, property: "og:type", content: "article"
   = tag :meta, property: "og:title", content: @article.title
+  = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image)
 .artshow
