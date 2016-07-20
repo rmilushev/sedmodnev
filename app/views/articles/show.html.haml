@@ -1,6 +1,6 @@
 - content_for :head do
   = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
-  = tag :meta, property: "og:site_name", content: I18n.t(:brand)
+  = tag :meta, property: "og:site_name", content: "Your single point of truth"
   = tag :meta, property: "og:type", content: "article"
   = tag :meta, property: "og:title", content: @article.title
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
