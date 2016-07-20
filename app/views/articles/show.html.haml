@@ -12,6 +12,7 @@
       =h raw @article.title
     .artcl-image
       =image_tag attachment_url(@article, :article_image, :fit, 600, 300)
+      %p= request.original_url + attachment_url(@article, :article_image)
     .art-content
       %p
         =h raw  @article.content
