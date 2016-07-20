@@ -5,14 +5,14 @@
   = tag :meta, property: "og:title", content: @article.title
   = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
-  = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image)
+  = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fill, 400, 300)
 .artshow
   .art-show-wrap
     %p#notice= notice
     %h2
       =h raw @article.title
     .artcl-image
-      =image_tag attachment_url(@article, :article_image, :fit, 600, 300)
+      =image_tag attachment_url(@article, :article_image, :fill, 600, 300)
     .art-content
       %p
         =h raw  @article.content
