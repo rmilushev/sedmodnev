@@ -41,7 +41,7 @@ gem 'refile-mini_magick'
 gem 'trix'
 gem 'fog', require: 'fog/rackspace'
 gem 'high_voltage'
-
+gem 'koala'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console
