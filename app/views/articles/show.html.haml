@@ -4,7 +4,7 @@
   = tag :meta, property: "og:type", content: "article"
   = tag :meta, property: "og:title", content: @article.title
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
-  = tag :meta, property: "og:image", content: request.original_url + attachment_url(@article, :article_image)
+  = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image)
 .artshow
   .art-show-wrap
     %p#notice= notice
@@ -12,7 +12,6 @@
       =h raw @article.title
     .artcl-image
       =image_tag attachment_url(@article, :article_image, :fit, 600, 300)
-      %p= request.protocol + request.host + attachment_url(@article, :article_image)
     .art-content
       %p
         =h raw  @article.content
