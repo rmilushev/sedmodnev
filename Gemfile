@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # Use Unicorn as the app server
 gem 'simple_form', '~> 3.2.1', github: 'plataformatec/simple_form',
                                branch: 'master'
