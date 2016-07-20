@@ -1,9 +1,9 @@
 - content_for :head do
   = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
-  = tag :meta, property: "og:site_name", content: t(:burgas_reporter)
+  = tag :meta, property: "og:site_name", content: t(:brand)
   = tag :meta, property: "og:type", content: "article"
   = tag :meta, property: "og:title", content: @article.title
-  = tag :meta, property: "og:url", content: request.original_url
+  = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image)
 .artshow
   .art-show-wrap
