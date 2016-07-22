@@ -3,6 +3,7 @@
     .article-item
       %h2
         = link_to art.title, art
+    - unless admin_signed_in?
       .row
         .col-md-11.col-sm-12.col-xs-12.art-image
           = link_to art do
