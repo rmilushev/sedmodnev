@@ -3,7 +3,7 @@ class TwitterController < ApplicationController
     message = 'Tweet successful'
     begin
       TwitterAPI.new.client.update(params[:art_url])
-    rescue StandartError => e
+    rescue StandardError => e
       message = e.message
     end
 
