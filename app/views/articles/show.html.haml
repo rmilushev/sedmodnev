@@ -6,6 +6,11 @@
   = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240)
+  = tag :meta, name: "twitter:card", content: "summary_large_image"
+  = tag :meta, name: "twitter:site", content: "@BurgasReporter"
+  = tag :meta, name: "twitter:title", content: @article.title
+  = tag :meta, name: "twitter:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
+  = tag :meta, name: "twitter:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240)
 .artshow
   .art-show-wrap
     %p#notice= notice
@@ -16,6 +21,7 @@
     .art-content
       %p
         =h raw  @article.content
+    = render 'layouts/twitt_share'
     - if admin_signed_in?
       = link_to t(:edit_article), edit_article_path(@article), class: 'btn btn-warning'
       = link_to t(:delete_article), @article, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
