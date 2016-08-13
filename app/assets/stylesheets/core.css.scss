@@ -13,6 +13,7 @@ $secondary: #cedce4;
 
 body {
   background: $bg;
+  padding-top: 60px;
 }
 .brand-logo {
   @media only screen and (max-width : 420px) {
@@ -262,10 +263,8 @@ body {
   display: -ms-flxebox;
   display: -webkit-flex;
   justify-content: center;
-  margin: 21px;
-}
-  border: dotted mistyrose 2px;
-  padding-top: 58px;
+  margin: 11px;
+  }
 }
 
 .art-content {
