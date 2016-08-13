@@ -13,7 +13,7 @@
     %h2
       =h raw @article.title
     .artcl-image
-      =image_tag attachment_url(@article, :article_image, :fill, 600, 300)
+      =image_tag attachment_url(@article, :article_image, :fill, 600, 300), class: "img-responsive"
     .art-content
       %p
         =h raw  @article.content
