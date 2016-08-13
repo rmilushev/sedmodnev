@@ -9,8 +9,7 @@
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240)
 .artshow
-  .art-show-wrap
-    -# %p#notice= notice
+  .art-wrap
     %h2
       =h raw @article.title
     .artcl-image

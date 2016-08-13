@@ -255,34 +255,39 @@ body {
 }
 
 .artshow {
+  @media only screen and ( min-width : 600px ) {
   display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flxebox;
   display: -webkit-flex;
   justify-content: center;
+  margin: 21px;
 }
-
-.art-show-wrap {
-  @media only screen and (min-width : 750px) {
-    max-width: 700px;
-  }
+  border: dotted mistyrose 2px;
+  padding-top: 58px;
 }
 
 .art-content {
   font-family: "Roboto Slab";
   font-weight: 400;
+  letter-spacing: -.003em;
+  color: rgba(0,0,0,.8);
+
   @media only screen and (min-width : 420px) {
   font-size: 19px;
   line-height: 1.58;
   }
+
   @media only screen and (max-width : 420px) {
     font-size: 18px;
     line-height: 1.35;
-    max-width: 98%;
+    padding-right: 10px;
   }
-  letter-spacing: -.003em;
-  color: rgba(0,0,0,.8);
+
+  @media only screen and (min-width : 750px) {
+    max-width: 700px;
+  }
 }
 
 .attachment.attachment-preview img {
@@ -312,4 +317,12 @@ trix-editor .attachment .remove {
     margin: 4px auto 0 auto;
     padding: 0;
     text-align: center;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
 }
