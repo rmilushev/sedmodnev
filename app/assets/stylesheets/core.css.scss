@@ -256,14 +256,14 @@ body {
 }
 
 .artshow {
-  @media only screen and ( min-width : 600px ) {
+  @media only screen and ( min-width : 660px ) {
   display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flxebox;
   display: -webkit-flex;
   justify-content: center;
-  margin: 11px;
+  margin: 18px;
   }
 }
 
