@@ -277,11 +277,8 @@ body {
     line-height: 1.35;
     padding-right: 10px;
   }
-
-  // @media only screen and (min-width : 750px) {
-  //   max-width: 700px;
-  // }
 }
+
 
 .attachment.attachment-preview img {
   height: 400px;
@@ -312,10 +309,3 @@ trix-editor .attachment .remove {
     text-align: center;
 }
 
-p {
-  display: block;
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 1em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-}
