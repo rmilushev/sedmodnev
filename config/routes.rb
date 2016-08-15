@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   devise_scope :admin do
     match 'admin' => 'devise/sessions#new', via: :get
   end
+  namespace :admin do
+    resources :articles
+  end
   post 'twitter/tweet', to: 'twitter#tweet_post'
   root to: 'articles#index'
   # root to: 'high_voltage/pages#show', id: 'construction'
