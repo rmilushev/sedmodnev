@@ -256,6 +256,9 @@ body {
 }
 
 .art-wrap {
+  @media only screen and (min-width : 750px) {
+    max-width: 700px;
+  }
 }
 
 .art-content {
@@ -275,9 +278,9 @@ body {
     padding-right: 10px;
   }
 
-  @media only screen and (min-width : 750px) {
-    max-width: 700px;
-  }
+  // @media only screen and (min-width : 750px) {
+  //   max-width: 700px;
+  // }
 }
 
 .attachment.attachment-preview img {
