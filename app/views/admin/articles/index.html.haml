@@ -1,2 +1,15 @@
-- @articles.each do |article|
-  %h2= article.title
+%table.table.table-striped
+  %thead
+    %tr
+      %th Published at:
+      %th Title
+      %th Seen (times)
+
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= l article.created_at.to_date, format: :euformat
+        %td= article.title
+        %td wip for seen
+        %td= link_to "Edit", edit_article_path(article), class: "btn btn-theme, btn-success"
+        %td= link_to "Delete", article, data: { confirm: 'Are you sure?' }, method: 'delete', class: "btn btn-theme-bg"
