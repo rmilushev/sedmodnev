@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_scope :admin do
     match 'admin' => 'devise/sessions#new', via: :get
   end
-  namespace :admin do
+  namespace :author do
     resources :articles
   end
   post 'twitter/tweet', to: 'twitter#tweet_post'
