@@ -1,0 +1,13 @@
+/ Static navbar
+%nav.navbar.header-v1.header-transparent.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header.scroll-to
+      %button.navbar-toggle.collapsed{"data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to t(:brand), root_path, class: "navbar-brand"
+    #navbar.navbar-collapse.collapse
+      %ul.nav.navbar-nav.navbar-right
+        = render 'layouts/redactor_nav_links'

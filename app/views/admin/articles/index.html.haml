@@ -11,5 +11,5 @@
         %td= l article.created_at.to_date, format: :euformat
         %td= link_to article.title, article
         %td wip for seen
-        %td= link_to "Edit", edit_article_path(article), class: "btn btn-theme, btn-success"
+        %td= link_to "Edit", edit_admin_article_path(article), class: "btn btn-theme, btn-success"
         %td= link_to "Delete", article, data: { confirm: 'Are you sure?' }, method: 'delete', class: "btn btn-theme-bg"
