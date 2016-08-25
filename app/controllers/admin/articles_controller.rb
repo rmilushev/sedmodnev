@@ -1,5 +1,5 @@
-module Admin
-  class ArticlesController < AdminController
+# module Admin
+  class Admin::ArticlesController < AdminController
     before_action :authenticate_admin!
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     def index
@@ -7,7 +7,7 @@ module Admin
     end
 
     def new
-      @admin_article = Article.new
+      @admin_article = Admin::Article.new
     end
 
     # GET /articles/1/edit
@@ -17,7 +17,7 @@ module Admin
     # POST /articles
     # POST /articles.json
     def create
-      @admin_article = Article.new(article_params)
+      @admin_article = Admin::Article.new(article_params)
 
       respond_to do |format|
         if @admin_article.save
@@ -58,7 +58,7 @@ module Admin
 
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @admin_article = Article.find(params[:id])
+      @admin_article = Admin::Article.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -66,4 +66,4 @@ module Admin
       params.require(:article).permit(:title, :content, :published, :article_image, :author_id, :category_id, :golive)
     end
   end
-end
+# end
