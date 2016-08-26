@@ -1,13 +1,9 @@
-.head-banner
 .article-container
   - @articles.each do |art|
     .article-item
       %h2
         = link_to art.title, art
-    - if admin_signed_in?
-      = link_to "Tweet this...", twitter_tweet_path(art_url: (request.host + url_for(art))), method: :post, class: "btn btn-primary btn-success"
-    - unless admin_signed_in?
-      .row
-        .col-md-11.col-sm-12.col-xs-12.art-image
-          = link_to art do
-            =image_tag attachment_url(art, :article_image, :fill, 620, 370), class: "img-responsive"
+    .row
+      .col-md-11.col-sm-12.col-xs-12.art-image
+        = link_to art do
+          =image_tag attachment_url(art, :article_image, :fill, 620, 370), class: "img-responsive"

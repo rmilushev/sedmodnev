@@ -1,0 +1,3 @@
+
+- if admin_signed_in?
+  = link_to "Tweet this...", twitter_tweet_path(art_url: (request.host + url_for(art))), method: :post, class: "btn btn-primary btn-success"

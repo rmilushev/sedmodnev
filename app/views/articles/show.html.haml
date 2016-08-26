@@ -20,5 +20,5 @@
     = render 'layouts/twitt_share'
     -# = render 'layouts/adsense'
     - if admin_signed_in?
-      = link_to t(:edit_article), edit_article_path(@article), class: 'btn btn-warning'
-      = link_to t(:delete_article), @article, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
+      = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
+      -# = link_to t(:delete_article), @article, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
