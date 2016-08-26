@@ -1,8 +1,8 @@
-= form_for(@admin_article) do |f|
-  - if @admin_article.errors.any?
+= form_for([:author, @author_article]) do |f|
+  - if @author_article.errors.any?
     .alert.alert-danger
       %ul
-        - @admin_article.errors.full_messages.each do |err|
+        - @author_article.errors.full_messages.each do |err|
           %li= err
   .container
     .form-inputs
