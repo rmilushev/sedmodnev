@@ -1,3 +1,4 @@
+= will_paginate @author_articles
 %table.table.table-striped.table-fixed
   %thead
     %tr
@@ -13,3 +14,4 @@
         %td wip for seen
         %td= link_to "Edit", edit_author_article_path(article), class: "btn btn-theme, btn-success"
         %td= link_to "Delete", author_article_path(article), data: { confirm: 'Are you sure?' }, method: 'delete', class: "btn btn-theme-bg"
+= will_paginate @author_articles

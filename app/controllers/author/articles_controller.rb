@@ -3,7 +3,7 @@ module Author
     before_action :authenticate_admin!
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     def index
-      @author_articles = Article.desc_order
+      @author_articles = Article.desc_order.paginate(page: params[:page], per_page: 17)
     end
 
     def new
