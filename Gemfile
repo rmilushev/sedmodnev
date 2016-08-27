@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # Use Unicorn as the app server
-gem 'simple_form', '~> 3.2.1', github: 'plataformatec/simple_form',
+gem 'simple_form', '~> 3.3.1', github: 'plataformatec/simple_form',
                                branch: 'master'
 gem 'unicorn'
 gem 'unicorn-rails'
@@ -45,7 +45,7 @@ gem 'high_voltage'
 gem 'koala'
 gem 'twitter'
 gem 'pry'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate'
 # gem 'pry-debugger'
 group :development, :test do
