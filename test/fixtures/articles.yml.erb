@@ -1,0 +1,7 @@
+#create 50 articles
+<% 50.times do |article| %>
+article_<%= article %>:
+  title: <%= "Article #{article}" %>
+  content: <%= "Article content for #{article}" %>
+  article_image: <%= "article_image_for_#{article}" %>
+<% end %>
