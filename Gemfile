@@ -53,7 +53,7 @@ group :development, :test do
   # console
   gem 'byebug'
   # gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  # gem 'factory_girl_rails'
 end
 
 group :test do
