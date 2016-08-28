@@ -59,6 +59,9 @@ end
 group :test do
   gem 'faker'
   gem 'capybara-webkit'
+  gem 'minitest-reporters'
+  gem 'guard'
+  gem 'guard-minitest'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
