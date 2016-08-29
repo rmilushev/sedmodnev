@@ -26,7 +26,7 @@ module Sedmodnev
     config.generators do |g|
       g.stylesheets = false
       g.javascripts = false
-      g.test_framework :mini_test,
+      g.test_framework :minitest,
                        fixture: true
     end
   end
