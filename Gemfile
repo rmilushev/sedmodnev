@@ -53,7 +53,7 @@ group :development, :test do
   # console
   gem 'byebug'
   # gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  # gem 'factory_girl_rails'
 end
 
 group :test do
@@ -62,6 +62,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
+  gem 'minitest-rails-capybara'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
