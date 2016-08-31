@@ -1,9 +1,15 @@
 .article-container
   - @articles.each do |art|
     .article-item
-      %h2
+      -# %h2
         = link_to art.title, art
     .row
-      .col-md-11.col-sm-12.col-xs-12.art-image
+      .col-md-6.col-lg-6.col-xs-12.art-image
         = link_to art do
-          =image_tag attachment_url(art, :article_image, :fill, 620, 370), class: "img-responsive"
+          = image_tag attachment_url(art, :article_image, :fill, 660, 370), class: "img-responsive"
+        .article-title
+          %h1.text-center= art.title
+        -# %span
+        -#   = "Text".html_safe
+        -#   = image_tag attachment_url(art, :article_image, :fill, 620,370) , class: "img-responsive"
+        -#   = "Text".html_safe
