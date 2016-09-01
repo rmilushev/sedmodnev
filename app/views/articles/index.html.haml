@@ -4,11 +4,12 @@
       -# %h2
         = link_to art.title, art
     .row
-      .col-md-6.col-lg-6.col-xs-12.art-image
+      .col-lg-8.col-md-9.col-xs-12.art-image
         = link_to art do
-          = image_tag attachment_url(art, :article_image, :fill, 660, 370), class: "img-responsive"
-        .article-title
-          %h1.text-center= art.title
+          = image_tag attachment_url(art, :article_image, :fill, 860, 370), class: "img-responsive"
+          .article-title.text-center
+            %h1
+              %span= art.title
         -# %span
         -#   = "Text".html_safe
         -#   = image_tag attachment_url(art, :article_image, :fill, 620,370) , class: "img-responsive"
