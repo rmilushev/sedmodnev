@@ -4,6 +4,7 @@
     %tr
       %th Published at:
       %th Title
+      %th Head article?
       %th Seen (times)
 
   %tbody
@@ -11,6 +12,7 @@
       %tr
         %td= l article.created_at.to_date, format: :euformat
         %td= link_to article.title, article
+        %td= tick_bool(article.on_top?)
         %td wip for seen
         %td= link_to "Edit", edit_author_article_path(article), class: "btn btn-theme, btn-success"
         %td= link_to "Delete", author_article_path(article), data: { confirm: 'Are you sure?' }, method: 'delete', class: "btn btn-theme-bg"

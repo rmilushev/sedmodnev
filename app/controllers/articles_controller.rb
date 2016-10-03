@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.desc_order.recent
+    @articles = Article.desc_order.on_top.recent
   end
 
   def show
