@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708080747) do
+ActiveRecord::Schema.define(version: 20161004081504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
+
+  create_table "admin_items", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +42,14 @@ ActiveRecord::Schema.define(version: 20160708080747) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "article_tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "article_tags", ["name"], name: "article_tags_ix", using: :btree
+
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -45,7 +61,27 @@ ActiveRecord::Schema.define(version: 20160708080747) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "article_image_id"
+    t.boolean  "on_top"
+    t.decimal  "importance"
   end
+
+  create_table "author_article_tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "author_article_tags", ["name"], name: "index_author_article_tags_on_name", using: :btree
+
+  create_table "author_taggings", force: :cascade do |t|
+    t.integer  "article_id"
+    t.integer  "author_article_tag_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "author_taggings", ["article_id"], name: "index_author_taggings_on_article_id", using: :btree
+  add_index "author_taggings", ["author_article_tag_id"], name: "index_author_taggings_on_author_article_tag_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "name"
@@ -59,6 +95,13 @@ ActiveRecord::Schema.define(version: 20160708080747) do
 
   add_index "images", ["article_id"], name: "index_images_on_article_id", using: :btree
   add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
+
+  create_table "options", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "redactor_assets", force: :cascade do |t|
     t.integer  "user_id"
@@ -85,6 +128,8 @@ ActiveRecord::Schema.define(version: 20160708080747) do
     t.datetime "updated_at",            null: false
   end
 
+  add_foreign_key "author_taggings", "articles"
+  add_foreign_key "author_taggings", "author_article_tags"
   add_foreign_key "images", "articles"
   add_foreign_key "images", "users"
 end

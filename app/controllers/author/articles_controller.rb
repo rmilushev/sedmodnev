@@ -3,7 +3,8 @@ module Author
     before_action :authenticate_admin!
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     def index
-      @author_articles = Article.desc_order.on_top.paginate(page: params[:page], per_page: 17)
+      @author_articles = Article.importance.desc_order.paginate(page: params[:page], per_page: 17)
+      # @author_articles = Article.on_top.paginate(page: params[:page], per_page: 17)
     end
 
     def new
@@ -63,7 +64,7 @@ module Author
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_article_params
-      params.require(:article).permit(:title, :content, :published, :article_image, :author_id, :category_id, :golive)
+      params.require(:article).permit(:title, :content, :published, :article_image, :author_id, :category_id, :golive, :importance)
     end
   end
 end
