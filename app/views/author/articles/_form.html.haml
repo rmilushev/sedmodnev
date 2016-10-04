@@ -5,19 +5,18 @@
         - @author_article.errors.full_messages.each do |err|
           %li= err
   .container
-    .form-inputs
+    .form-group
       = f.label :title
       = f.text_field :title, size: 160
-      %br
+      -# %br
+    .form-group
+      = f.label :importance
+      = f.text_field :importance
+    .form-group
       = f.label :article_image
       = f.attachment_field :article_image
+    .form-group
       = f.label :content
       = f.trix_editor :content
-      -# = f.input :published
-      -# = f.input :picture, as: :file
-      -# = f.input :author_id
-      -# = f.input :category_id
-      -# = f.input :golive
-
     .form-actions
       = f.submit
