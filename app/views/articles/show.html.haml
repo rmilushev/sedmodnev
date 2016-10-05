@@ -18,8 +18,8 @@
     .art-content
       %p
         =h raw  @article.content
-    = render 'layouts/twitt_share'
     = render 'layouts/fb_like'
+    = render 'layouts/twitt_share'
     = render 'layouts/adsense'
     - if admin_signed_in?
       = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
