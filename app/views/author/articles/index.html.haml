@@ -10,7 +10,7 @@
   %tbody
     - @author_articles.each do |article|
       %tr
-        %td= l article.created_at.to_date, format: :euformat
+        %td= l article.created_at.to_date
         %td= link_to article.title, article
         %td= article.importance
         -# %td
