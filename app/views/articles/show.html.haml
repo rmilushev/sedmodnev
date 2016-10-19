@@ -13,6 +13,8 @@
   .art-wrap
     %h2
       =h raw @article.title
+    %p.dateformat
+      =l @article.created_at.to_date
     .artcl-image
       =image_tag attachment_url(@article, :article_image, :fill, 600, 300), class: "img-responsive"
     .art-content

@@ -1,8 +1,16 @@
 bg:
   meta_description: "Бургаски репортер е информационен сайт за случващото се в Югоизточна България. Ние подбираме за Вас новоните, които носят положителна енергия."
   brand: "Бургаски Репортер"
+  # date:
+  #   formats:
+  #     euformat:
+  #       '%d %B %Y'
+  #
   date:
+    order:
+      - :day
+      - :month
+      - :year
     formats:
-      euformat:
-        '%d %B %Y'
+      default: "%d %b %Y"
 
