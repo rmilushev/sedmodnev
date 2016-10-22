@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.importance.desc_order.recent
+    @articles = Article.importance.desc_order.paginate(page: params[:page], per_page: 17)
   end
 
   def show
