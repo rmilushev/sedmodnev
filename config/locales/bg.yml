@@ -13,4 +13,7 @@ bg:
       - :year
     formats:
       default: "%d %b %Y"
+  will_paginate:
+    previous_label: "Предишни статии"
+    next_label: "Следващи статии"
 
