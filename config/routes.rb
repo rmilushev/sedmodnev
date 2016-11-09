@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags, except: :show
+  get 'tags/:tag', to: 'articles#index'
   resources :images, only: [:create, :destroy]
   resources :articles, only: [:index, :show]
   devise_for :admins

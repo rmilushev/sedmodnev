@@ -47,6 +47,10 @@ gem 'twitter'
 gem 'pry'
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate'
+gem 'acts-as-taggable-on'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-chosen'
+end
 # gem 'pry-debugger'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger

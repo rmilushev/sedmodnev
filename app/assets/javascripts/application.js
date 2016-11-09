@@ -17,4 +17,5 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require trix
+//= require chosen
 //= require_tree .

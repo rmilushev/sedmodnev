@@ -18,5 +18,8 @@
     .form-group
       = f.label :content
       = f.trix_editor :content
+    .form-group
+      = f.label :tag_list, 'Tags (separated with comas)'
+      = f.text_field :tag_list, class: "form-control"
     .form-actions
       = f.submit
