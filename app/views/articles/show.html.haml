@@ -10,7 +10,6 @@
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
   = render 'layouts/new_adsense'
 
-= render 'layouts/fb_comments'
 .artshow
   .art-wrap
     %h2
@@ -28,7 +27,7 @@
     = render 'layouts/adsense'
     = render 'articles/fb_comment'
     -# = render 'layouts/mainbanner'
-    = render 'disqus'
+    -# = render 'disqus'
     - if admin_signed_in?
       = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
       -# = link_to t(:delete_article), @article, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
