@@ -9,6 +9,8 @@
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
   = render 'layouts/new_adsense'
+
+= render 'layouts/fb_comments'
 .artshow
   .art-wrap
     %h2
@@ -24,6 +26,7 @@
     = render 'layouts/fb_like'
     = render 'layouts/twitt_share'
     = render 'layouts/adsense'
+    = render 'articles/fb_comment'
     -# = render 'layouts/mainbanner'
     = render 'disqus'
     - if admin_signed_in?
