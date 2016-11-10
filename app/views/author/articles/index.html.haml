@@ -16,6 +16,6 @@
         -# %td
           -# - tick_bool(article.on_top?)
         %td wip for seen
-        %td= link_to "Edit", edit_author_article_path(article), class: "btn btn-theme, btn-success"
+        %td= link_to "Edit", edit_author_article_path(article), 'data-no-turbolink' => true, class: "btn btn-theme, btn-success"
         %td= link_to "Delete", author_article_path(article), data: { confirm: 'Are you sure?' }, method: 'delete', class: "btn btn-theme-bg"
 = will_paginate @author_articles
