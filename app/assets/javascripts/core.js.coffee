@@ -1,4 +1,4 @@
-$(document).on 'ready page:load', ->
+$(document).on 'turbolinks:load', ->
   # enable chosen js
   $('.chosen-select').chosen
     allow_single_deselect: true
