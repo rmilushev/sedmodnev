@@ -18,7 +18,6 @@ GIT
 
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
   specs:
     CFPropertyList (2.3.2)
     actionmailer (4.2.6)
@@ -101,6 +100,10 @@ GEM
     capybara-webkit (1.11.1)
       capybara (>= 2.3.0, < 2.8.0)
       json
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -387,9 +390,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.6)
       sprockets-rails
-    rails-assets-chosen (1.6.2)
-      rails-assets-jquery (>= 1.4.4)
-    rails-assets-jquery (3.1.1)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -522,6 +522,7 @@ DEPENDENCIES
   capistrano-rails-console
   capistrano-rbenv
   capybara-webkit
+  chosen-rails
   coffee-rails (~> 4.1.0)
   devise
   faker
@@ -541,7 +542,6 @@ DEPENDENCIES
   pg (~> 0.15)
   pry
   rails (= 4.2.6)
-  rails-assets-chosen!
   rails-i18n (~> 4.0.0)
   refile
   refile-mini_magick

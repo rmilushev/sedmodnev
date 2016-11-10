@@ -29,9 +29,7 @@
     = render 'layouts/fb_like'
     = render 'layouts/twitt_share'
     = render 'layouts/adsense'
-    = render 'articles/fb_comment'
     -# = render 'layouts/mainbanner'
     -# = render 'disqus'
     - if admin_signed_in?
       = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
-      -# = link_to t(:delete_article), @article, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}

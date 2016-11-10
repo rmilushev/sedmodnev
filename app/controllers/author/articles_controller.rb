@@ -64,7 +64,7 @@ module Author
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_article_params
-      params.require(:article).permit(:title, :content, :published, :article_image, :author_id, :category_id, :golive, :importance, :tag_list)
+      params.require(:article).permit(:title, :content, :published, :article_image, :author_id, :category_id, :golive, :importance, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
   end
 end

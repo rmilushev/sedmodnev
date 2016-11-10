@@ -1,4 +1,4 @@
-= form_for([:author, @author_article]) do |f|
+= form_for([:author, @author_article], :html => { role: 'form' }) do |f|
   - if @author_article.errors.any?
     .alert.alert-danger
       %ul
@@ -19,7 +19,7 @@
       = f.label :content
       = f.trix_editor :content
     .form-group
-      = f.label :tag_list, 'Tags (separated with comas)'
-      = f.text_field :tag_list, class: "form-control"
+      = f.label :tag_list, 'Tags'
+      = f.collection_select(:tag_ids, Tag.order(:name), :id, :name, {}, {class: 'chosen-select', multiple: true })
     .form-actions
       = f.submit

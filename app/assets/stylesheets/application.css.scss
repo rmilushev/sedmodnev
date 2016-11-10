@@ -1,4 +1,6 @@
 /*
+*= require chosen
+*= require tags
 */
 
 @import "bootstrap-sprockets";
@@ -6,5 +8,4 @@
 @import "font-awesome";
 @import "main";
 @import "core";
-@import "chosen";
 @import "trix";
