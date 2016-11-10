@@ -1,0 +1,13 @@
+.divide60
+%section
+  .spacer-100
+  .row
+    .col-md-4
+    .col-md-4
+      %p
+        %strong Name:
+        = @tag.name
+      = link_to 'Edit', edit_tag_path(@tag)
+      |
+      \#{link_to 'Back', tags_path}
+    .col-md-4

@@ -1,0 +1,19 @@
+%section
+  .row
+    .col-md-1
+    .col-md-10
+      = render 'layouts/messages'
+      %h3 Tags
+      = link_to 'New tag', new_tag_path, class: "btn btn-primary pull-right"
+      %table.table.table-hover
+        %thead
+          %tr
+            %th Name
+            %th{:colspan => "3"}
+        %tbody
+          - @tags.each do |tag|
+            %tr
+              %td= tag.name
+              %td= link_to 'Edit', edit_tag_path(tag)
+              %td= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' }
+    .col-md-1
