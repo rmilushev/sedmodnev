@@ -8,5 +8,5 @@
           .article-title.text-center
             %h1
               %span= art.title
-      = raw art.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+        = raw art.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
   = will_paginate @author_articles
