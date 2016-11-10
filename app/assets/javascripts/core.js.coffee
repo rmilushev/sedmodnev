@@ -1,4 +1,4 @@
-$(document).on 'ready page:load page:change', ->
+$(document).on 'ready page:load', ->
   # enable chosen js
   $('.chosen-select').chosen
     allow_single_deselect: true
