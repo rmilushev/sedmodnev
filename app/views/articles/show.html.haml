@@ -10,8 +10,6 @@
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
   = render 'layouts/new_adsense'
 .row
-  .benner-side.col-lg-3.col-md-3.col-sm-12.pull-right
-    = render 'layouts/mainbanner'
   .artshow.col-lg-6.col-md-8
     .art-wrap
       %h2
