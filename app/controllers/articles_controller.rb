@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
+    @tags = Tag.all
     if params[:tag]
       @articles = Article.tagged_with(params[:tag]).desc_order.paginate(page: params[:page], per_page: 15)
     else
