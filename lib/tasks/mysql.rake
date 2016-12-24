@@ -10,7 +10,7 @@ namespace :mysql do
       host: 'localhost',
       database: 'brep',
       user: 'root',
-      password: 'vertical'
+      password: ENV['MYSQL_PASS']
     )
     class WpPost < ActiveRecord::Base
     end
@@ -36,7 +36,7 @@ namespace :mysql do
           host: 'localhost',
           database: 'brep',
           user: 'root',
-          password: 'vertical'
+          password: ENV['MYSQL_PASS']
         )
         attach = WpPost.where(post_type: 'attachment').where(post_parent: p.id)
         upl = attach.first.try(:guid)
@@ -54,12 +54,9 @@ namespace :mysql do
           host: 'localhost',
           database: 'brep',
           user: 'root',
-          password: 'vertical'
+          password: ENV['MYSQL_PASS']
         )
         puts "Added article with id: #{p.id}"
     end
-    # @posts = WpPost.where(post_type: 'post').count
-    # @all_posts = WpPost.all.count
-    # puts "Post count: #{@posts}, all posts: #{@all_posts}"
   end
 end
