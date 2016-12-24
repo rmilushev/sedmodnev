@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109222541) do
+ActiveRecord::Schema.define(version: 20161224003822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,9 @@ ActiveRecord::Schema.define(version: 20161109222541) do
     t.string   "article_image_id"
     t.boolean  "on_top"
     t.decimal  "importance"
+    t.decimal  "leg_id"
+    t.string   "leg_attach"
+    t.string   "leg_url"
   end
 
   create_table "author_article_tags", force: :cascade do |t|

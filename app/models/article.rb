@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  validates :title, :article_image, presence: true
+  validates :title, presence: true
   attachment :article_image
   acts_as_taggable
 
