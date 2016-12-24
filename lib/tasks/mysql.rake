@@ -9,7 +9,8 @@ namespace :mysql do
       adapter: 'mysql2',
       host: 'localhost',
       database: 'brep',
-      user: 'root'
+      user: 'root',
+      password: 'vertical'
     )
     class WpPost < ActiveRecord::Base
     end
@@ -34,7 +35,8 @@ namespace :mysql do
           adapter: 'mysql2',
           host: 'localhost',
           database: 'brep',
-          user: 'root'
+          user: 'root',
+          password: 'vertical'
         )
         attach = WpPost.where(post_type: 'attachment').where(post_parent: p.id)
         upl = attach.first.try(:guid)
@@ -51,7 +53,8 @@ namespace :mysql do
           adapter: 'mysql2',
           host: 'localhost',
           database: 'brep',
-          user: 'root'
+          user: 'root',
+          password: 'vertical'
         )
         puts "Added article with id: #{p.id}"
     end
