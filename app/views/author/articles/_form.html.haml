@@ -16,7 +16,7 @@
       = f.label :article_image
       = f.attachment_field :article_image
       - if @author_article.leg_attach
-        = f.label :remote_article_image_url, "Or specify URL: #{root_path}#{asset_path(@author_article.leg_attach)}"
+        = f.label :remote_article_image_url, "Or specify URL to pull from: #{root_path}#{asset_path(@author_article.leg_attach)}"
         = f.text_field :remote_article_image_url, value: asset_path(@author_article.leg_attach)
     .form-group
       = f.label :content
