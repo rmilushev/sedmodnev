@@ -18,7 +18,6 @@
     = render 'layouts/fb_comments'
     .banners-top
       = render 'layouts/mainbanner' if current_page?(root_path)
-      = render 'layouts/novarep' if current_page?(root_path)
     .container-fluid
       = yield
     = render 'layouts/google_a'

@@ -12,7 +12,6 @@
 .row
   .artshow.col-lg-6.col-md-8
     .art-wrap
-      = render 'layouts/novarep'
       %h2
         =h raw @article.title
       %p.dateformat
@@ -29,7 +28,6 @@
       -# = render 'share'
       = render 'layouts/fb_like'
       = render 'layouts/twitt_share'
-      = render 'layouts/elect17'
       = render 'layouts/adsense'
       -# = render 'disqus'
       - if admin_signed_in?
