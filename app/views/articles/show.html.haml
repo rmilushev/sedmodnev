@@ -9,26 +9,26 @@
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
   = render 'layouts/new_adsense'
-.row
-  .artshow.col-lg-6.col-md-8
-    .art-wrap
-      %h2
-        =h raw @article.title
-      %p.dateformat
-        =l @article.created_at.to_date
-      .artcl-image
-        =image_tag attachment_url(@article, :article_image, :fill, 600, 300), class: "img-responsive"
-      - if admin_signed_in?
-        .article-tags
-          %h4 Tag List:
-          %p= @article.tag_list
-      .art-content
-        %p
-          =h raw  @article.content
-      -# = render 'share'
-      = render 'layouts/fb_like'
-      = render 'layouts/twitt_share'
-      = render 'layouts/adsense'
-      -# = render 'disqus'
-      - if admin_signed_in?
-        = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
+-# .row
+.artshow.col-lg-11.col-md-9.col-xs-12
+  .art-wrap
+    %h1
+      =h raw @article.title
+    %p.dateformat
+      =l @article.created_at.to_date
+    .artcl-image
+      =image_tag attachment_url(@article, :article_image, :fill, 600, 300), class: "img-responsive"
+    - if admin_signed_in?
+      .article-tags
+        %h4 Tag List:
+        %p= @article.tag_list
+    .art-content
+      %p
+        =h raw  @article.content
+    -# = render 'share'
+    = render 'layouts/fb_like'
+    = render 'layouts/twitt_share'
+    = render 'layouts/adsense'
+    -# = render 'disqus'
+    - if admin_signed_in?
+      = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
