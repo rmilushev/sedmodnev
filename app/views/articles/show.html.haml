@@ -18,7 +18,7 @@
     %p.dateformat
       =l @article.created_at.to_date
     .artcl-image
-      =image_tag attachment_url(@article, :article_image, :fill, 700, 360), class: "img-responsive"
+      =image_tag attachment_url(@article, :article_image, :fill, 660, 320), class: "img-responsive"
     - if admin_signed_in?
       .article-tags
         %h4 Tag List:
