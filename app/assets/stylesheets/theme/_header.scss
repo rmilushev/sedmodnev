@@ -20,11 +20,15 @@
 .navbar-default .navbar-brand {
   color: #00283D;
   font-family: 'Playfair Display', serif;
-  font-size: 2em;
+  font-size: 2.1em;
   text-shadow: 1px 1px 1px #007dbf;
   &:hover {
     color: #007dbf;
     text-shadow: 1px 1px 2px #00283d;
+  }
+
+  @media only screen and (max-width : 420px) {
+  font-size: 1.8em;
   }
 }
 .navbar-default {
