@@ -12,6 +12,7 @@
 -# .row
 .artshow
   .art-wrap
+    = render 'layouts/wbanner' unless current_page?(root_path)
     %h1
       =h raw @article.title
     %p.dateformat
