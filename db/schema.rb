@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161224003822) do
+ActiveRecord::Schema.define(version: 20170719204926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,10 @@ ActiveRecord::Schema.define(version: 20161224003822) do
     t.decimal  "leg_id"
     t.string   "leg_attach"
     t.string   "leg_url"
+    t.tsvector "tsv"
   end
+
+  add_index "articles", ["tsv"], name: "articles_tsv_idx", using: :gin
 
   create_table "author_article_tags", force: :cascade do |t|
     t.string   "name"

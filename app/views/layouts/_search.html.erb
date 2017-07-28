@@ -1,9 +1,35 @@
-   <div class="col-lg-6">
-     <div class="input-group">
-       <input type="text" class="form-control" placeholder="Search for...">
-       <span class="input-group-btn">
-         <button class="btn btn-default" type="button">Go!</button>
-       </span>
-     </div><!-- /input-group -->
-   </div><!-- /.col-lg-6 -->
- </div><!-- /.row -->
+<!-- <div class="col&#45;lg&#45;6"> -->
+<!--   <div class="input&#45;group"> -->
+<!--     <input type="text" name="query" id="query" class="form&#45;control" placeholder="Search for..."> -->
+<!--     <span class="input&#45;group&#45;btn"> -->
+<!--       <input type="submit" name="commit" class="btn btn&#45;default" value="Search..."> -->
+<!--     </span> -->
+<!--   </div><!&#45;&#45; /input&#45;group &#45;&#45;> -->
+<!-- </div><!&#45;&#45; /.col&#45;lg&#45;6 &#45;&#45;> -->
+<!-- <!&#45;&#45; </div><!&#38;#45;&#38;#45; /.row &#38;#45;&#38;#45;> &#45;&#45;> -->
+<%= form_tag search_articles_path, :method => :get, :remote => true do %>
+  <fieldset>
+    <h3>Search for an article</h3>
+
+    <div class="input">
+      <%= label_tag :search, "Search terms" %>
+      <%= text_field_tag :search, params[:search] %>
+      <br>
+      <%= check_box_tag :use_highlights, '1', params[:use_highlights] %>
+      <%= label :use_highlights, 'HTML Highlight results' %>
+      <br><br>
+      <%= submit_tag "Search" %>
+    </div>
+  </fieldset>
+<% end %>
+
+<div id="search_results">
+  <% if @articles.any? %>
+    <%= render @articles %>
+  <% else %>
+    <p>
+    Oh dear. Your search matched nothing in the database, or there there is simply
+    nothing in the database.
+    </p>
+  <% end %>
+</div>

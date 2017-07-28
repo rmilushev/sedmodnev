@@ -370,6 +370,10 @@ GEM
       shellany (~> 0.0)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    pg_search (2.0.1)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      arel (>= 6)
     pkg-config (1.1.7)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -542,6 +546,7 @@ DEPENDENCIES
   minitest-reporters
   mysql2
   pg (~> 0.15)
+  pg_search
   pry
   rails (= 4.2.6)
   rails-i18n (~> 4.0.0)

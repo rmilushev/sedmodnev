@@ -13,4 +13,20 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
   end
+
+  def search
+    if params[:use_highlights]
+      @articles = Article.highlight_tsearch(params[:search])
+    else
+      @articles = Article.plain_tsearch(params[:search])
+    end
+
+    respond_to do |format|
+      format.html { render :index }
+      format.js { @articles }
+    end
+  end
 end
+#         end
+#   end
+# end
