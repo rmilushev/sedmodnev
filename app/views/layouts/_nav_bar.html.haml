@@ -13,6 +13,6 @@
       -# = render 'layouts/search'
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
-        -# = render 'layouts/nav_links'
+        = render 'layouts/nav_links'
         - if admin_signed_in?
           = render 'layouts/admin_nav_links'
