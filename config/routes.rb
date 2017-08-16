@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'articles#index'
   resources :images, only: [:create, :destroy]
   resources :articles, only: [:index, :show] do
+    # get 'search', on: :collection
+  end
+  resources :searches, only: [:index] do
     get 'search', on: :collection
   end
   devise_for :admins

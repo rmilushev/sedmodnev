@@ -15,10 +15,12 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    if params[:use_highlights]
-      @articles = Article.highlight_tsearch(params[:search])
-    else
-      @articles = Article.plain_tsearch(params[:search])
+    if params[:search]
+      if params[:use_highlights]
+        @articles = Article.highlight_tsearch(params[:search])
+      else
+        @articles = Article.plain_tsearch(params[:search])
+      end
     end
 
     respond_to do |format|
