@@ -1,4 +1,2 @@
--# - @tags.each do |art_tag|
--#   = link_to art_tag.name, articles_path(tag: art_tag), class: "btn btn-theme btn-large"
-= link_to searches_path do
-  = render 'layouts/search_button'
+- @tags.each do |art_tag|
+  = link_to art_tag.name, articles_path(tag: art_tag), class: "btn btn-theme btn-large"

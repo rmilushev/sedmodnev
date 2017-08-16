@@ -1,5 +1,6 @@
 class SearchesController < ApplicationController
   def index
+    @tags = ActsAsTaggableOn::Tag.all
   end
 
   def search

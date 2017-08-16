@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
     if params[:tag]
       @tag = ActsAsTaggableOn::Tag.find(params[:tag])
       @articles = Article.tagged_with(@tag.name).desc_order.paginate(page: params[:page], per_page: 15)
-      # binding.pry
     else
       @articles = Article.importance.desc_order.paginate(page: params[:page], per_page: 17)
     end
