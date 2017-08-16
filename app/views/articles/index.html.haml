@@ -1,6 +1,8 @@
 .article-container
-  - @tags.each do |art_tag|
-    = link_to art_tag.name, articles_path(tag: art_tag), class: "btn btn-theme btn-large"
+  -# = render 'layouts/search'
+
+  -# - @tags.each do |art_tag|
+  -#   = link_to art_tag.name, articles_path(tag: art_tag), class: "btn btn-theme btn-large"
   - @articles.each do |art|
     .article-item
     .row
