@@ -1,2 +1,3 @@
 - tags.each do |art_tag|
-  = link_to art_tag.name, articles_path(tag: art_tag)
+  %li
+    = link_to art_tag.name, articles_path(tag: art_tag)
