@@ -1,5 +1,5 @@
 module ApplicationHelper
   def tags
-    @tags = ActsAsTaggableOn::Tag.all
+    @tags = ActsAsTaggableOn::Tag.sample(5)
   end
 end
