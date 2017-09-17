@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @current_tag = @article.tags.first
   end
 
   def search

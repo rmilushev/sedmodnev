@@ -12,7 +12,6 @@
 -# .row
 .artshow
   .art-wrap
-    -# = render 'layouts/wbanner' unless current_page?(root_path)
     %h1
       =h raw @article.title
     %p.dateformat
@@ -30,6 +29,5 @@
     = render 'layouts/fb_like'
     = render 'layouts/twitt_share'
     = render 'layouts/adsense'
-    -# = render 'disqus'
     - if admin_signed_in?
       = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
