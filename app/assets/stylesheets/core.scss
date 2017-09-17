@@ -234,13 +234,8 @@ body {
 
 .intro {
   display: block;
-  // background: url(asset-path('nrep.jpg')) no-repeat center center scroll;
   border: solid 3px red;
   background-color: $bblue;
-  // background-size: cover;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
 }
 
 .artshow {
@@ -378,4 +373,8 @@ trix-editor .attachment .remove {
 
 .banners-top {
   display: flex;
+}
+
+.blue {
+  color: #36A0FF;
 }

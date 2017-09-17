@@ -1,7 +1,7 @@
-%li= @current_tag if @current_tag
+%li= link_to @current_tag, articles_path(tag: @current_tag) if @current_tag
 - tags.each do |art_tag|
   %li
     = link_to art_tag.name, articles_path(tag: art_tag)
-%li.btn.btn-default
+%li
   = link_to searches_path do
-    %span.glyphicon.glyphicon-search
+    %span.glyphicon.glyphicon-search.fa-2x.blue
