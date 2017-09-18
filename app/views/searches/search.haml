@@ -1,6 +1,5 @@
--# =render 'search_results'
--if @results
-  = render @results
--else
-  %p
-    No results found for this query...
+- if @results
+  = render 'search_results'
+- unless @results
+  .no-results
+    %h1 No results found for this query...

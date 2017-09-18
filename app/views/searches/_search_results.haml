@@ -1,0 +1,6 @@
+.container
+  - @results.each do |article|
+    %h4= link_to article.title, article
+    %p
+      =l article.created_at.to_date
+    %hr

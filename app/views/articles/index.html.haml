@@ -1,6 +1,6 @@
--# .article-container
 .artshow
   .art-wrap-index
+    = render 'layouts/current_tag'
     - @articles.each do |art|
       .article-item
       .row

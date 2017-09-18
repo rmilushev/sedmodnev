@@ -1,6 +1,9 @@
 module ApplicationHelper
   def tags
-    return Tag.all.except(@current_tag).sample(4) if @current_tag
-    Tag.all.sample(5)
+    Tag.all
+  end
+
+  def selected_tag
+    Tag.find(params[:tag]).name if params[:tag]
   end
 end
