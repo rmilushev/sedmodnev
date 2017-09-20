@@ -267,10 +267,6 @@ body {
   font-weight: 400;
   letter-spacing: -.003em;
   color: rgba(0,0,0,.8);
-  :first-letter {
-    font-size: 1.7em;
-    color: black;
-  }
 
   @media only screen and (min-width : 420px) {
   font-size: 19px;
@@ -284,7 +280,15 @@ body {
   }
 }
 
+.art-content > div:first-of-type:first-letter {
+  color: black;
+  font-size: 1.7em;
+}
 
+  // ::first-letter {
+  //   font-size: 1.7em;
+  //   color: black;
+  // }
 .attachment.attachment-preview img {
   min-height: 600px;
   // max-width: 100%;
