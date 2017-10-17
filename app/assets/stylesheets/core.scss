@@ -239,27 +239,20 @@ body {
 }
 
 .artshow {
-  @media only screen and ( min-width : 660px ) {
   display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flxebox;
   display: -webkit-flex;
-  justify-content: center;
+  flex-wrap: wrap;
   margin: 18px;
+  @media only screen and (min-width : 750px) {
+  max-width: 1000px;
   }
 }
 
 .art-wrap {
-  // @media only screen and (min-width : 750px) {
   max-width: 700px;
-  // }
-}
-
-.art-wrap-index {
-  @media only screen and (min-width : 750px) {
-  max-width: 1000px;
-  }
 }
 
 .art-content {
@@ -392,4 +385,41 @@ hr {
 
 .space40 {
   margin: 40px;
+}
+
+.frame-item {
+  border-top: solid 4px black;
+  border-bottom: 1px solid #ccc;
+  border-radius: 1px;
+  margin: 0 16px 16px 0;
+  padding: .4em;
+  box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12), 1px 0 2px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
+  transform: translate3d(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  @media only screen and (max-width : 420px) {
+    width: 50%;
+  }
+  @media only screen and (max-width : 220px) {
+    width: 90%;
+  }
+  @media only screen and (min-width : 500px) {
+    width: 30%;
+  }
+  align-content: space-between;
+}
+
+.cnt-art {
+  margin: 1em;
+  h2 {
+  text-overflow: ellipsis;
+  line-height: 20px;
+  max-height: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 18px;
+}
 }

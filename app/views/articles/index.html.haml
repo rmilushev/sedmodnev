@@ -1,15 +1,6 @@
 .artshow
-  .art-wrap-index
-    = render 'layouts/current_tag'
-    - @articles.each do |art|
-      .article-item
-      .row
-        .col-lg-8.col-md-9.col-xs-12.art-image
-          = link_to art, data: { turbolinks: false} do
-            = image_tag attachment_url(art, :article_image, :fill, 860, 370), class: "img-responsive"
-            .article-title.text-center
-              %h1
-                %span= art.title
-          -# .tags-index
-            -# = raw art.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+  = render 'layouts/current_tag'
+  - @articles.each do |article|
+    = link_to @articles.first, class: 'frame-item' do
+      = render partial: 'item', object: article
 = will_paginate @author_articles
