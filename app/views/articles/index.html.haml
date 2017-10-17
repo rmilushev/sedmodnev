@@ -1,6 +1,6 @@
 .artshow
   = render 'layouts/current_tag'
   - @articles.each do |article|
-    = link_to @articles.first, class: 'frame-item' do
+    = link_to article, class: 'frame-item' do
       = render partial: 'item', object: article
 = will_paginate @author_articles
