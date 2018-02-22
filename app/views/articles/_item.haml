@@ -1,8 +1,8 @@
--# .frame-item
-.img-art
-  = artpic(item, 600, 300)
-.cnt-art
-  %h4= item.tags.first
-  %h2= item.title
-  %p= l item.created_at.to_date
-
+.index-item
+  .img-art
+    = link_to item do
+      = artpic(item, 400, 300)
+  .cnt-art
+    %h4= link_to(item.tags.first, articles_path(tag: item.tags.first)) if item.tags.present?
+    %h2= link_to item.title, item
+    %p= l item.created_at.to_date
