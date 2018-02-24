@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '~> 4.2.7.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 gem 'mysql2'
@@ -29,8 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # Use Unicorn as the app server
-gem 'simple_form', '~> 3.3.1', github: 'plataformatec/simple_form',
-                               branch: 'master'
+gem 'simple_form'
+# gem 'simple_form', '~> 3.3.1', github: 'plataformatec/simple_form',
+                               # branch: 'master'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'font-awesome-rails'
@@ -61,11 +62,7 @@ end
 
 group :test do
   gem 'faker'
-  gem 'capybara-webkit'
-  gem 'minitest-reporters'
   gem 'guard'
-  gem 'guard-minitest'
-  gem 'minitest-rails-capybara'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
