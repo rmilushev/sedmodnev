@@ -1,12 +1,17 @@
 class ImagesController < ApplicationController
   protect_from_forgery except: :create
 
+  def index
+    @images = Image.all
+  end
+
   def create
     @image = Image.new(image_params)
-    @image.save
-
+    @image.article_id = request.referer.try(:split, '/').try(:[], -2)
     respond_to do |format|
-      format.json { render json: { url: Refile.attachment_url(@image, :picture), picture_id: @image.picture_id } }
+      if @image.save
+        format.json { render :show, status: :created, location: @image }
+      end
     end
   end
 
@@ -17,6 +22,10 @@ class ImagesController < ApplicationController
     respond_to do |format|
       format.json { render json: { status: :ok } }
     end
+  end
+
+  def show
+    @image = Image.find(params[:id])
   end
 
   private

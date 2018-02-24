@@ -17,6 +17,9 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require trix
+//= require trix-images
+//= require wysiwyg
+//= require trix-upload
 //= require chosen-jquery
 //= require core
 //= require_tree .

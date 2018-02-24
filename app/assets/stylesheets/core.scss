@@ -282,10 +282,6 @@ body {
   //   font-size: 1.7em;
   //   color: black;
   // }
-.attachment.attachment-preview img {
-  min-height: 600px;
-  // max-width: 100%;
-}
 
 
 .art-image {
@@ -344,6 +340,16 @@ trix-editor .attachment .remove {
     margin: 4px auto 0 auto;
     padding: 0;
     text-align: center;
+}
+
+.attachment.attachment-preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+.art-content img {
+  max-width: 100%;
+  height: auto;
 }
 
 .mainbanner {

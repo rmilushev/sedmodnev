@@ -23,7 +23,7 @@
         %h4 Tag List:
         %p= @article.tag_list
     .art-content
-      =h raw  @article.content
+      =h raw sanitize @article.content
     -# = render 'share'
     = render 'layouts/fb_like'
     = render 'layouts/twitt_share'

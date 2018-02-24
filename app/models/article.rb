@@ -1,6 +1,10 @@
 class Article < ActiveRecord::Base
   include PgSearch
-  pg_search_scope :search_for, against: %i(title content)
+  has_many :images
+  pg_search_scope :search_for,
+                  against: [:title, :content],
+                  order_within_rank: 'articles.updated_at DESC'
+
   validates :title, presence: true
   attachment :article_image
   acts_as_taggable

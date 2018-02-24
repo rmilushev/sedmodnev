@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :tags, except: :show
   get 'tags/:tag', to: 'articles#index'
-  resources :images, only: [:create, :destroy]
+  resources :images, only: [:index, :create, :destroy, :show]
   resources :articles, only: [:index, :show] do
     # get 'search', on: :collection
   end

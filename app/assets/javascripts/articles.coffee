@@ -1,6 +1,11 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+Trix.config.attachments =
+  preview:
+    caption:
+      name: false
+      size: false
+  file:
+    caption:
+      size: false
 $ ->
   document.addEventListener 'trix-attachment-add', (event) ->
     attachment = event.attachment
@@ -29,7 +34,7 @@ $ ->
       attachment.setAttributes
         url: response.url
         picture_id: response.picture_id
-        href: response.url
+        href: response.image_url
 
     xhr.send form
 

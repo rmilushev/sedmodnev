@@ -4,19 +4,15 @@ module Author
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     def index
       @author_articles = Article.importance.desc_order.paginate(page: params[:page], per_page: 17)
-      # @author_articles = Article.on_top.paginate(page: params[:page], per_page: 17)
     end
 
     def new
       @author_article = Article.new
     end
 
-    # GET /articles/1/edit
     def edit
     end
 
-    # POST /articles
-    # POST /articles.json
     def create
       @author_article = Article.new(author_article_params)
 
@@ -31,8 +27,6 @@ module Author
       end
     end
 
-    # PATCH/PUT /articles/1
-    # PATCH/PUT /articles/1.json
     def update
       respond_to do |format|
         if @author_article.update(author_article_params)
@@ -45,8 +39,6 @@ module Author
       end
     end
 
-    # DELETE /articles/1
-    # DELETE /articles/1.json
     def destroy
       @author_article.destroy
       respond_to do |format|
@@ -57,12 +49,10 @@ module Author
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_article
       @author_article = Article.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def author_article_params
       params.require(:article).permit(:title, :content, :published, :article_image, :author_id, :category_id, :golive, :importance, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
