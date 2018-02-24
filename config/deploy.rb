@@ -3,7 +3,7 @@ set :deploy_user, 'deployer'
 
 # setup repo details
 set :scm, :git
-set :repo_url, 'ssh://git@github.com:rmilushev/sedmodnev.git'
+set :repo_url, 'git@github.com:rmilushev/sedmodnev.git'
 # setup rbenv.
 set :rbenv_type, :system
 set :rbenv_ruby, '2.3.1'
