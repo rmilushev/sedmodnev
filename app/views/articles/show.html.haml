@@ -29,7 +29,8 @@
         - if admin_signed_in?
           = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
     .show-right-adv
-      %h1 Right advertisement
+      -# %h1 Right advertisement
+      = render 'layouts/right_adsense'
   = render 'layouts/adsense'
   -# = render 'share'
   -# = render 'layouts/fb_like'

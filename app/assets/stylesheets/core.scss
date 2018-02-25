@@ -485,12 +485,10 @@ hr {
   }
 
   transition: opacity 1s cubic-bezier(0.33, 0.66, 0.33, 1);
-  border: solid 1px orange;
   position: sticky;
   top: 250px;
   height: 100vh;
   box-sizing: border-box;
-  // margin: 10px;
   margin-left: 50px;
   margin-right: 40px;
   width: 85px;
@@ -566,10 +564,8 @@ hr {
   @media only screen and (max-width : 600px) {
     display: none;
   }
-  border: solid 1px red;
   top: 115px;
   position: sticky;
-  // top: 250px;
   height: 80vh;
   box-sizing: border-box;
 }
