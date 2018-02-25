@@ -2,7 +2,7 @@ class ImagesController < ApplicationController
   protect_from_forgery except: :create
 
   def index
-    @images = Image.all
+    @images = Image.desc_order
   end
 
   def create

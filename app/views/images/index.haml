@@ -1,4 +1,6 @@
 %h2= @images.count
 - @images.each do |i|
-  = link_to "Image picture_id: #{i.picture_id}", image_path(i)
+  .image-index
+    =image_tag attachment_url(i, :picture, :fill, 680, 360), class: "img-responsive"
+  -# = link_to "Image picture_id: #{i.picture_id}", image_path(i)
 
