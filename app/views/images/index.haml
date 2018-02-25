@@ -1,0 +1,4 @@
+%h2= @images.count
+- @images.each do |i|
+  = link_to "Image picture_id: #{i.picture_id}", image_path(i)
+
