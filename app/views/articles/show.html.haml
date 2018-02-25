@@ -8,25 +8,30 @@
   = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
+
+.container-fluid
   = render 'layouts/new_adsense'
--# .row
-.artshow
-  .art-wrap
-    %h1
-      =h raw @article.title
-    %p.dateformat
-      =l @article.created_at.to_date
-    .artcl-image
-      =image_tag attachment_url(@article, :article_image, :fill, 680, 360), class: "img-responsive"
-    - if admin_signed_in?
-      .article-tags
-        %h4 Tag List:
-        %p= @article.tag_list
-    .art-content
-      =h raw sanitize @article.content
-    -# = render 'share'
-    = render 'layouts/fb_like'
-    = render 'layouts/twitt_share'
-    = render 'layouts/adsense'
-    - if admin_signed_in?
-      = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
+  .show-page
+    .share-sidebar
+      .title-share
+        %h2 Share
+    .cont-body
+      .flex-center
+        %span.title-intro
+          = @article.tag_list.first
+          = l @article.created_at.to_date
+        %h1= h raw @article.title
+        .artcl-image
+          =image_tag attachment_url(@article, :article_image, :fill, 960, 600), class: "img-responsive"
+      -# .art-wrap
+      .art-content
+        =h raw  @article.content
+        - if admin_signed_in?
+          = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
+    .show-right-adv
+      -# %h1 Right advertisement
+      = render 'layouts/right_adsense'
+  = render 'layouts/adsense'
+  -# = render 'share'
+  -# = render 'layouts/fb_like'
+  -# = render 'layouts/twitt_share'
