@@ -1,5 +1,5 @@
 .artshow
   = render 'layouts/current_tag'
-  - @articles.first(5).each.with_index(1) do |article, i|
+  - @articles.first(15).each.with_index(1) do |article, i|
     = render partial: 'item', object: article, locals: { index: i }, id: artitem_id(i)
 = will_paginate @author_articles
