@@ -393,7 +393,9 @@ hr {
   word-wrap: break-word;
   overflow-wrap: break-word;
   font-size: 1.3em;
-  color: $violet;
+  a {
+    color: $violet;
+  }
   @media only screen and (max-width : 300px) {
     font-size: 1em;
   }
