@@ -393,8 +393,9 @@ hr {
   word-wrap: break-word;
   overflow-wrap: break-word;
   font-size: 1.3em;
+  font-family: 'Oranienbaum', cursive;
   a {
-    color: $violet;
+    // color: $violet;
   }
   @media only screen and (max-width : 300px) {
     font-size: 1em;
@@ -567,16 +568,17 @@ hr {
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     margin-top: 3px;
-    @media only screen and (min-width : 600px) {
-      font-size: 64px;
-      line-height: 55px;
-      margin: 0 0 50px;
-    }
-    @media only screen and (max-width : 600px) {
-      font-size: 45px;
-      line-height: 38px;
-      margin: 0 0 25px;
-    }
+    // @media only screen and (min-width : 600px) {
+      // font-size: 64px;
+    font-size: 4rem;
+    line-height: 3.5rem;
+    margin: 0 0 3rem;
+    // }
+    // @media only screen and (max-width : 600px) {
+    //   font-size: 45px;
+    //   line-height: 38px;
+    //   margin: 0 0 25px;
+    // }
   }
 }
 
