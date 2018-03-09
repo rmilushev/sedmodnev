@@ -547,8 +547,8 @@ hr {
 .show-page {
   display: grid;
   justify-content: center;
-  grid-template-columns: 180px 2fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 140px 3fr 1fr;
+  grid-gap: 3rem;
 
   @media only screen and (max-width : 600px) {
     grid-template-columns: 1fr;
