@@ -547,10 +547,10 @@ hr {
 .show-page {
   display: grid;
   justify-content: center;
-  grid-template-columns: 140px 3fr 1fr;
-  grid-gap: 3rem;
+  grid-template-columns: 140px 7fr 5fr;
+  grid-gap: 4rem;
 
-  @media only screen and (max-width : 600px) {
+  @media only screen and (max-width : 800px) {
     grid-template-columns: 1fr;
   }
 
@@ -583,7 +583,7 @@ hr {
 }
 
 .show-right-adv {
-  @media only screen and (max-width : 600px) {
+  @media only screen and (max-width : 800px) {
     display: none;
   }
   top: 115px;
