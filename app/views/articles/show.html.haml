@@ -1,24 +1,25 @@
-- content_for :head do
-  = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
-  = tag :meta, name: "twitter:card", content: "summary_large_image"
-  = tag :meta, name: "twitter:site", content: "@BurgasReporter"
-  = tag :meta, property: "og:url", content: request.original_url
-  = tag :meta, property: "og:type", content: "article"
-  = tag :meta, property: "og:title", content: @article.title
-  = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
-  = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
-  = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
-
+-# - content_for :head do
+-#   = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
+-#   = tag :meta, name: "twitter:card", content: "summary_large_image"
+-#   = tag :meta, name: "twitter:site", content: "@BurgasReporter"
+-#   -# = tag :meta, property: "og:url", content: request.original_url
+-#   = tag :meta, property: "og:type", content: "article"
+-#   = tag :meta, property: "og:title", content: @article.title
+-#   = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
+-#   = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
+-#   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
+= render 'layouts/og_head'
 .container-fluid
   = render 'layouts/new_adsense'
   .show-page
     .share-sidebar
-      .title-share
-        %h2 Share
       %ul.share-listing
-        -# %li.listing-fb
-        -#   = link_to 'http://vert.bg', target: '_blank' do
-        -#     = fa_icon 'facebook inverse', base: 'square-o', class: 'fa-lg'
+        %li.listing-fb
+          = link_to 'https://twitter.com/share', target: '_blank' do
+            = render 'layouts/tw_left'
+        %li.listing-fb
+          = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: 'blank' do
+            = render 'layouts/fb_left'
     .cont-body
       .flex-center
         %span.title-intro
