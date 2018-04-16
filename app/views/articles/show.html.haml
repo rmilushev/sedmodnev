@@ -8,7 +8,7 @@
   = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
 -# = render 'layouts/og_head'
-.container-fluid
+.container
   = render 'layouts/new_adsense'
   .show-page
     .share-sidebar
@@ -17,7 +17,7 @@
           = link_to 'https://twitter.com/share', target: '_blank' do
             = render 'layouts/tw_left'
         %li.listing-fb
-          = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: 'blank' do
+          = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: '_blank' do
             = render 'layouts/fb_left'
     .cont-body
       .flex-center
