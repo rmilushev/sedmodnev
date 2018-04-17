@@ -26,7 +26,7 @@
           = l @article.created_at.to_date
         %h1= h raw @article.title
         .artcl-image
-          =image_tag attachment_url(@article, :article_image, :fit, 440, 340), class: "img-responsive"
+          =image_tag attachment_url(@article, :article_image, :fit, 660, 440), class: "img-responsive"
       .art-content
         =h raw  @article.content
         - if admin_signed_in?
