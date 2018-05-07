@@ -14,7 +14,7 @@
     .share-sidebar
       %ul.share-listing
         %li.listing-fb
-          = link_to 'https://twitter.com/share', target: '_blank' do
+          = link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{request.original_url}/?mbid=social_twitter_onsiteshare&via=BurgasReporter", target: :_blank do
             = render 'layouts/tw_left'
         %li.listing-fb
           = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: '_blank' do
