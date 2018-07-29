@@ -4,7 +4,7 @@
     %tr
       %th Published at:
       %th Title
-      %th Range
+      -# %th Range
       -# %th Importance
       %th Seen (times)
 
@@ -13,7 +13,7 @@
       %tr
         %td= l article.created_at.to_date
         %td= link_to article.title, article
-        %td= radio_button_tag :top_article, 'top_article'
+        -# %td= radio_button_tag :top_article, 'top_article'
         -# %td= article.importance
         -# %td
           - tick_bool(article.on_top?)

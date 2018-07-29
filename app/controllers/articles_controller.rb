@@ -28,6 +28,3 @@ class ArticlesController < ApplicationController
     end
   end
 end
-#         end
-#   end
-# end
