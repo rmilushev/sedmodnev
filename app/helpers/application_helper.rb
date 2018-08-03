@@ -1,6 +1,6 @@
 module ApplicationHelper
   def tags
-    tags ||= Tag.where(active: true)
+    tags ||= Tag.where(active: true).order(:id)
   end
 
   def selected_tag
