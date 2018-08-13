@@ -11,6 +11,9 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @current_tag = @article.tags.first
+    if @current_tag
+      @last_current = Article.tagged_with(@current_tag.name).first(5)
+    end
   end
 
   def search

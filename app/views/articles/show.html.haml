@@ -22,19 +22,19 @@
             = render 'layouts/fb_left'
     .cont-body
       .flex-center
-        %span.title-intro
-          = @article.tag_list.first
-          = l @article.created_at.to_date
-        %h1= h raw @article.title
-        .artcl-image
-          =image_tag attachment_url(@article, :article_image, :fit, 860, 500), class: "img-responsive"
-      .art-content
-        =h raw  @article.content
+        %div{itemscope: "", itemtype: "http://schema.org/NewsArticle"}
+          %span.title-intro
+            = @article.tag_list.first
+            %span{itemprop: "dateCreated", itemprop: "datePublished"}= l @article.created_at.to_date
+          %h1
+            %span{itemprop: "headline"}= h raw @article.title
+          .artcl-image
+            %span{itemprop: "image"}= image_tag attachment_url(@article, :article_image, :fit, 860, 500), class: "img-responsive"
+        .art-content
+          = h raw  @article.content
         - if admin_signed_in?
           = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
     .show-right-adv
       = render 'layouts/right_adsense'
   = render 'layouts/adsense'
-  -# = render 'share'
-  -# = render 'layouts/fb_like'
-  -# = render 'layouts/twitt_share'
+  = render 'articles/more_articles'
