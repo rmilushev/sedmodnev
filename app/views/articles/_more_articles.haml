@@ -1,0 +1,5 @@
+.more-news
+  - if @current_tag
+    %h2= "Още от: #{@current_tag}"
+    - @last_current.each do |article|
+      %h2= link_to article.title, article
