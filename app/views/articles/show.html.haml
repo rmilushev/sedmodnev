@@ -31,8 +31,8 @@
             %span.hidden{itemprop: "datePublished"}= @article.updated_at.to_date
             %span.hidden{itemprop: "image"}= 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 600, 400) unless @article.article_image.nil?
             %span.hidden{itemprop: "author"}= @author
-            %span.hidden{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}= @publisher
-            -# %span.hidden{itemprop: "publisher"}= @publisher
+            %div{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}= @publisher
+              %p.hidden{itemprop: "name"}= @publisher
           %h1
             %span{itemprop: "headline"}= h raw @article.title
           .artcl-image
