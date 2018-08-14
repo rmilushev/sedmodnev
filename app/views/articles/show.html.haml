@@ -28,9 +28,10 @@
             = l @article.created_at.to_date
             %span.hidden{itemprop: "dateCreated"}= @article.created_at.to_date
             %span.hidden{itemprop: "dateModified"}= @article.updated_at.to_date
-            %span.hidden{itemprop: "image"}= attachment_url(@article, :article_image, :fit, 600, 400)
-            %span.hidden{itemprop: "author"}= @author
-            %span.hidden{itemprop: "publisher"}= @publisher
+            %span.hidden{itemprop: "datePublished"}= @article.updated_at.to_date
+            %span.hidden{itemprop: "image"}= 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 600, 400) unless @article.article_image.nil?
+            %span.hidden{itemprop: "author", itemtype: "http://schema.org/NewsArticle"}= @author
+            %span.hidden{itemprop: "publisher", itemtype: "http://schema.org/NewsArticle"}= @publisher
           %h1
             %span{itemprop: "headline"}= h raw @article.title
           .artcl-image
