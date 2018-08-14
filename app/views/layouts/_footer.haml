@@ -1,6 +1,6 @@
 %footer.footer
-  .footer-title
-    %h1= link_to t(:brand), root_path
+  .footer-title{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}
+    %h1= link_to t(:brand), root_path, itemprop: "url"
     %ul.list-inline.social-1
       %li
         = link_to 'https://facebook.com/BurgasReporter', target: :_blank do
