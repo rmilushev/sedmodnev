@@ -10,4 +10,8 @@ module ArticlesHelper
   def artitem_id(i)
     i < 10 ? "a#{i}" : nil
   end
+
+  def featured_articles_for(current_tag)
+
+  end
 end

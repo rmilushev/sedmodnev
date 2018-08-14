@@ -25,11 +25,16 @@
         %div{itemscope: "", itemtype: "http://schema.org/NewsArticle"}
           %span.title-intro
             = @article.tag_list.first
-            %span{itemprop: "dateCreated", itemprop: "datePublished"}= l @article.created_at.to_date
+            = l @article.created_at.to_date
+            %span.hidden{itemprop: "dateCreated"}= @article.created_at.to_date
+            %span.hidden{itemprop: "dateModified"}= @article.updated_at.to_date
+            %span.hidden{itemprop: "image"}= attachment_url(@article, :article_image, :fit, 600, 400)
+            %span.hidden{itemprop: "author"}= @author
+            %span.hidden{itemprop: "publisher"}= @publisher
           %h1
             %span{itemprop: "headline"}= h raw @article.title
           .artcl-image
-            %span{itemprop: "image"}= image_tag attachment_url(@article, :article_image, :fit, 860, 500), class: "img-responsive"
+            = image_tag attachment_url(@article, :article_image, :fit, 860, 500), class: "img-responsive"
         .art-content
           = h raw  @article.content
         - if admin_signed_in?

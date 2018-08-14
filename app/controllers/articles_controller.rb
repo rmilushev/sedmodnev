@@ -12,8 +12,14 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @current_tag = @article.tags.first
     if @current_tag
-      @last_current = Article.tagged_with(@current_tag.name).desc_order.first(7)
+      @feat_current = Article.tagged_with(@current_tag.name).desc_order.first(7).reject {|a| a == @article}
+      @tags ||= Tag.where(active: true).order(:id)
+      @current_index = @tags.find_index {|t| t.id == @current_tag.id}
+      @prev_current = Article.tagged_with(@tags[@current_index - 1].name).desc_order.first(6)
+      @next_current = Article.tagged_with(@tags[@current_index + 1].name).desc_order.first(6)
     end
+    @author =  "Krasimir Kaludov"
+    @publisher = "burgas-reporter.com"
   end
 
   def search
