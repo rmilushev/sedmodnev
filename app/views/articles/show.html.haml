@@ -33,6 +33,10 @@
             %span.hidden{itemprop: "author"}= @author
             %div{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}
               %p.hidden{itemprop: "name"}= @publisher
+            %span{:itemprop => "logo", :itemscope => "", :itemtype => "https://schema.org/ImageObject"}
+              %meta{:content => "https://#{ENV['SITENAME']}/logo.png", :itemprop => "url"}/
+              %meta{:content => "700", :itemprop => "width"}/
+              %meta{:content => "120", :itemprop => "height"}/
           %h1
             %span{itemprop: "headline"}= h raw @article.title
           .artcl-image
