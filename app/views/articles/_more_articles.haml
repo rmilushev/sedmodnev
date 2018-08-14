@@ -12,7 +12,7 @@
       - @prev_current.each.with_index(1) do |article, i|
         = render partial: 'item', object: article, locals: { index: i }, id: artitem_id(i)
 
-    %h2.text-center= "Още от: #{@tags[@current_index + 1].name}"
+    %h2.text-center= "Още от: #{@tags[clct(@current_index) + 1].name}"
     %hr
     .artshow.featured
       - @next_current.each.with_index(1) do |article, i|

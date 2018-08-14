@@ -11,7 +11,8 @@ module ArticlesHelper
     i < 10 ? "a#{i}" : nil
   end
 
-  def featured_articles_for(current_tag)
-
+  def clct(index)
+    return index if index < tags.length - 1
+    -1
   end
 end
