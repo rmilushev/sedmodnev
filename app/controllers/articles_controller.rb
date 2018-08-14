@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
       @tags ||= Tag.where(active: true).order(:id)
       @current_index = @tags.find_index {|t| t.id == @current_tag.id}
       @prev_current = Article.tagged_with(@tags[@current_index - 1].name).desc_order.first(6)
-      @next_current = Article.tagged_with(@tags[@current_index + 1].name).desc_order.first(6)
+      @next_current = Article.tagged_with(@tags[calc(@current_index) + 1].name).desc_order.first(6)
     end
     @author =  "Krasimir Kaludov"
     @publisher = "burgas-reporter.com"
@@ -35,5 +35,12 @@ class ArticlesController < ApplicationController
       format.html { render :index }
       format.js { @articles }
     end
+  end
+
+  private
+
+  def calc(index)
+    return index if index < @tags.length
+    -1
   end
 end
