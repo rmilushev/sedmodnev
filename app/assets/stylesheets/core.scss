@@ -257,9 +257,8 @@ body {
   }
 
   @media only screen and (max-width : 520px) {
-    padding-right: 1rem;
     padding-left: 1rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -546,7 +545,8 @@ hr {
 }
 
 .flex-center {
-  max-width: 85%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .show-page {

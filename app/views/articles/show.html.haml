@@ -7,45 +7,46 @@
   = tag :meta, property: "og:title", content: @article.title
   = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
   = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
--# = render 'layouts/og_head'
-.container
-  = render 'layouts/new_adsense'
-  = render 'layouts/mainbanner'
-  .show-page
-    .share-sidebar
-      %ul.share-listing
-        %li.listing-fb
-          = link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{request.original_url}/?mbid=social_twitter_onsiteshare&via=BurgasReporter", target: :_blank do
-            = render 'layouts/tw_left'
-        %li.listing-fb
-          = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: '_blank' do
-            = render 'layouts/fb_left'
-    .cont-body
-      .flex-center
-        %div{itemscope: "", itemtype: "http://schema.org/NewsArticle"}
-          %span.title-intro
-            = @article.tag_list.first
-            = l @article.created_at.to_date
-            %span.hidden{itemprop: "dateCreated"}= @article.created_at.to_date
-            %span.hidden{itemprop: "dateModified"}= @article.updated_at.to_date
-            %span.hidden{itemprop: "datePublished"}= @article.updated_at.to_date
-            %span.hidden{itemprop: "image"}= 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 600, 400) unless @article.article_image.nil?
-            %span.hidden{itemprop: "author"}= @author
-            %div{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}
-              %p.hidden{itemprop: "name"}= @publisher
-              %span{:itemprop => "logo", :itemscope => "", :itemtype => "https://schema.org/ImageObject"}
-                %meta{:content => "https://#{ENV['SITE_NAME']}/logo.png", :itemprop => "url"}/
-                %meta{:content => "700", :itemprop => "width"}/
-                %meta{:content => "120", :itemprop => "height"}/
-          %h1
-            %span{itemprop: "headline"}= h raw @article.title
-          .artcl-image
-            = image_tag attachment_url(@article, :article_image, :fit, 860, 500), class: "img-responsive"
-        .art-content
-          = h raw  @article.content
-        - if admin_signed_in?
-          = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
-    .show-right-adv
-      = render 'layouts/right_adsense'
-  = render 'layouts/adsense'
-  = render 'articles/more_articles'
+  -# %meta{:itemid => "https://www.usa-reisetipps.net/einreise-usa/esta-visum", :itemprop => "mainEntityOfPage", :itemscope => "", :itemtype => "https://schema.org/WebPage"}/
+-# .container
+= render 'layouts/new_adsense'
+-# = render 'layouts/mainbanner'
+.show-page
+  .share-sidebar
+    %ul.share-listing
+      %li.listing-fb
+        = link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{request.original_url}/?mbid=social_twitter_onsiteshare&via=BurgasReporter", target: :_blank do
+          = render 'layouts/tw_left'
+      %li.listing-fb
+        = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: '_blank' do
+          = render 'layouts/fb_left'
+  .cont-body
+    .flex-center
+      = render 'layouts/mainbanner'
+      %div{itemscope: "", itemtype: "http://schema.org/NewsArticle"}
+        %span.title-intro
+          = @article.tag_list.first
+          = l @article.created_at.to_date
+          %span.hidden{itemprop: "dateCreated"}= @article.created_at.to_date
+          %span.hidden{itemprop: "dateModified"}= @article.updated_at.to_date
+          %span.hidden{itemprop: "datePublished"}= @article.updated_at.to_date
+          %span.hidden{itemprop: "image"}= 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 600, 400) unless @article.article_image.nil?
+          %span.hidden{itemprop: "author"}= @author
+          %div{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}
+            %p.hidden{itemprop: "name"}= @publisher
+            %span{:itemprop => "logo", :itemscope => "", :itemtype => "https://schema.org/ImageObject"}
+              %meta{:content => "https://#{ENV['SITE_NAME']}/logo.png", :itemprop => "url"}/
+              %meta{:content => "700", :itemprop => "width"}/
+              %meta{:content => "120", :itemprop => "height"}/
+        %h1
+          %span{itemprop: "headline"}= h raw @article.title
+        .artcl-image
+          = image_tag attachment_url(@article, :article_image, :fit, 860, 500), class: "img-responsive"
+      .art-content
+        = h raw  @article.content
+      - if admin_signed_in?
+        = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
+  .show-right-adv
+    = render 'layouts/right_adsense'
+= render 'layouts/adsense'
+= render 'articles/more_articles'
