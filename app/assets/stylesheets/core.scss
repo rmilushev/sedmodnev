@@ -389,20 +389,21 @@ hr {
   margin: 1em;
   h2 {
   text-overflow: ellipsis;
-  line-height: 20px;
+  line-height: 1.4em;
   max-height: 100px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
   word-break: break-word;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  font-size: 1.3em;
-  font-family: 'Oranienbaum', cursive;
+  font-size: 1.6em;
+  // font-family: 'Oranienbaum', cursive;
+  font-family: 'Open Sans Condensed', sans-serif;
   a {
     // color: $violet;
   }
   @media only screen and (max-width : 300px) {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
   h4 a {
