@@ -18,7 +18,13 @@ module Author
 
       respond_to do |format|
         if @author_article.save
-          format.html { redirect_to @author_article, notice: 'Article was successfully created.' }
+          message = 'and twitted'
+          begin
+            TwitterAPI.new.client.update(params[:art_url])
+          rescue StandardError => e
+            message = e.message
+          end
+          format.html { redirect_to @author_article, notice: "Article was successfully created #{message}." }
           format.json { render :show, status: :created, location: @author_article }
         else
           format.html { render :new, notice: @author_article.errors }
