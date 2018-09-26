@@ -48,7 +48,7 @@ module Author
     def destroy
       @author_article.destroy
       respond_to do |format|
-        format.html { redirect_to admin_articles_url, notice: 'Article was successfully destroyed.' }
+        format.html { redirect_to author_articles_url, notice: 'Article was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
