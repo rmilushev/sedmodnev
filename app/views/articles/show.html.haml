@@ -8,6 +8,10 @@
   = tag :meta, property: "og:title", content: @article.title
   = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
   = tag :meta, property: "og:image", content: 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 510, 260) unless @article.article_image.nil?
+  = tag :meta, property: "og:image:secure_url", content: 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 510, 260) unless @article.article_image.nil?
+  = tag :meta, property: "og:image:width", content: '510'
+  = tag :meta, property: "og:image:height", content: '260'
+
 = render 'layouts/new_adsense'
 .show-page
   .share-sidebar
