@@ -19,8 +19,9 @@ module Author
       respond_to do |format|
         if @author_article.save
           message = 'and twitted'
+          status = ['https:/', ENV['SITE_NAME'], 'article', @author_article.id.to_s].join('/')
           begin
-            TwitterAPI.new.client.update(params[:art_url])
+            TwitterAPI.new.client.update(status)
           rescue StandardError => e
             message = e.message
           end
