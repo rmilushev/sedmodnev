@@ -3,7 +3,7 @@
   = tag :meta, name: "twitter:card", content: "summary_large_image"
   = tag :meta, name: "twitter:site", content: "@BurgasReporter"
   = tag :meta, property: "og:url", content: 'https://' + ENV['SITE_NAME'] + request.original_fullpath
-  = tag :meta, property: "og:locale", content: 'bg'
+  = tag :meta, property: "og:locale", content: 'bg_BG'
   = tag :meta, property: "og:type", content: 'article'
   = tag :meta, property: "og:title", content: @article.title
   = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
