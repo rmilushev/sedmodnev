@@ -45,6 +45,7 @@ gem 'trix', '~> 0.11.1'
 gem 'fog', require: 'fog/rackspace'
 gem 'high_voltage'
 gem 'koala'
+gem 'mechanize'
 gem 'twitter'
 gem 'pry'
 gem 'will_paginate', '~> 3.0.5'
@@ -67,7 +68,6 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'spring'
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails', '~> 1.1.0'

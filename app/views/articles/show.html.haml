@@ -1,26 +1,13 @@
-- content_for :head do
-  = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
-  = tag :meta, name: "twitter:card", content: "summary_large_image"
-  = tag :meta, name: "twitter:site", content: "@BurgasReporter"
-  = tag :meta, property: "og:url", content: 'https://' + ENV['SITE_NAME'] + request.original_fullpath
-  = tag :meta, property: "og:locale", content: 'bg_BG'
-  = tag :meta, property: "og:type", content: 'article'
-  = tag :meta, property: "og:title", content: @article.title
-  = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
-  = tag :meta, property: "og:image", content: 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 600, 315) unless @article.article_image.nil?
-  = tag :meta, property: "og:image:secure_url", content: 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 600, 315) unless @article.article_image.nil?
-  = tag :meta, property: "og:image:width", content: '600'
-  = tag :meta, property: "og:image:height", content: '315'
-
+= render 'og_content'
 = render 'layouts/new_adsense'
 .show-page
   .share-sidebar
     %ul.share-listing
       %li.listing-fb
-        = link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{request.original_url}/?mbid=social_twitter_onsiteshare&via=BurgasReporter", target: :_blank do
+        = link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{@article.og_fullpath}/?mbid=social_twitter_onsiteshare&via=BurgasReporter", target: :_blank do
           = render 'layouts/tw_left'
       %li.listing-fb
-        = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: '_blank' do
+        = link_to "https://www.facebook.com/sharer/sharer.php?u=#{@article.og_fullpath}", target: '_blank' do
           = render 'layouts/fb_left'
   .cont-body
     .flex-center
@@ -29,17 +16,7 @@
         %span.title-intro
           = @article.tag_list.first
           = l @article.created_at.to_date
-          %span.hidden{itemprop: "dateCreated"}= @article.created_at.to_date
-          %span.hidden{itemprop: "dateModified"}= @article.updated_at.to_date
-          %span.hidden{itemprop: "datePublished"}= @article.updated_at.to_date
-          %span.hidden{itemprop: "image"}= 'https://' + ENV['SITE_NAME'] + attachment_url(@article, :article_image, :fit, 600, 400) unless @article.article_image.nil?
-          %span.hidden{itemprop: "author"}= @author
-          %div{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}
-            %p.hidden{itemprop: "name"}= @publisher
-            %span{:itemprop => "logo", :itemscope => "", :itemtype => "https://schema.org/ImageObject"}
-              %meta{:content => "https://#{ENV['SITE_NAME']}/logo.png", :itemprop => "url"}/
-              %meta{:content => "700", :itemprop => "width"}/
-              %meta{:content => "120", :itemprop => "height"}/
+          = render 'amp_data'
         %h1
           %span{itemprop: "headline"}= h raw @article.title
         .artcl-image
@@ -51,4 +28,12 @@
   .show-right-adv
     = render 'layouts/right_adsense'
 = render 'layouts/adsense'
+.social-mobile
+  %ul.share-mobile
+    = link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{@article.og_fullpath}/?mbid=social_twitter_onsiteshare&via=BurgasReporter", target: :_blank do
+      %li.mobiles
+        = render 'layouts/tw_left'
+    = link_to "https://www.facebook.com/sharer/sharer.php?u=#{@article.og_fullpath}", target: '_blank' do
+      %li.mobiles
+        = render 'layouts/fb_left'
 = render 'articles/more_articles'

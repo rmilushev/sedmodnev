@@ -29,5 +29,6 @@ module Sedmodnev
       g.test_framework :minitest,
                        fixture: true
     end
+    config.logger = Logger.new(STDOUT)
   end
 end

@@ -1,0 +1,14 @@
+- content_for :head do
+  = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
+  = tag :meta, name: "twitter:card", content: "summary_large_image"
+  = tag :meta, name: "twitter:site", content: ENV['TWITTER_SITE']
+  = tag :meta, property: "og:url", content: @article.og_fullpath
+  = tag :meta, property: "og:locale", content: 'bg_BG'
+  = tag :meta, property: "og:type", content: 'article'
+  = tag :meta, property: "og:title", content: @article.title
+  = tag :meta, property: "og:description", content: @article.og_content
+  = tag :meta, property: "og:image", content: [@article.og_host, attachment_url(@article, :article_image, :fit, 600, 315)].join unless @article.article_image.nil?
+  = tag :meta, property: "og:image:secure_url", content: [@article.og_host, attachment_url(@article, :article_image, :fit, 600, 315)].join unless @article.article_image.nil?
+  = tag :meta, property: "og:image:width", content: '600'
+  = tag :meta, property: "og:image:height", content: '315'
+

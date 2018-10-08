@@ -18,8 +18,6 @@ class ArticlesController < ApplicationController
       @prev_current = Article.tagged_with(@tags[@current_index - 1].name).desc_order.first(6)
       @next_current = Article.tagged_with(@tags[calc(@current_index) + 1].name).desc_order.first(6)
     end
-    @author =  "Krasimir Kaludov"
-    @publisher = ENV['PUBLISHER']
   end
 
   def search

@@ -13,6 +13,30 @@ class Article < ActiveRecord::Base
   scope :recent, -> { where('created_at >= ?', 5.days.ago) }
   scope :importance, -> { order('importance ASC') }
 
+  def og_host
+    ['https://www.', ENV['SITE_NAME']].join
+  end
+
+  def og_image
+    [og_host, Refile.attachment_url(self, :article_image, :fit, '600', '315')].join unless self.article_image.nil?
+    nil
+  end
+
+  def og_fullpath
+    [og_host, '/articles/', self.id].join
+  end
+
+  def og_content
+    ActionController::Base.helpers.strip_tags(self.content).truncate_words(20, omission: '  ... ')
+  end
+
+  def author
+    ENV['DEFAULT_AUTHOR']
+  end
+
+  def publisher
+    ENV['PUBLISHER']
+  end
   # Note that ActiveRecord ARel from() doesn't appear to accommodate "?"
   # param placeholder, hence the need for manual parameter sanitization
   # def self.tsearch_query(search_terms, limit = query_limit)
