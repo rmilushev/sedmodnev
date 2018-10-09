@@ -447,9 +447,8 @@ hr {
 
 .index-item {
   background: white;
-  border-top: solid 4px black;
   border-bottom: 1px solid #ccc;
-  border-radius: 1px;
+  border-radius: 7px;
   padding: .4em;
   box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12), 1px 0 2px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
   transform: translate3d(0, 0, 0);
@@ -639,4 +638,8 @@ hr {
   border-right: solid #ccc 1px;
   justify-content: center;
   align-items: center;
+}
+
+.img-round {
+  border-radius: 5px;
 }
