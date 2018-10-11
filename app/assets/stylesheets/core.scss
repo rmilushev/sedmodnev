@@ -620,6 +620,7 @@ hr {
   transition: opacity 1s cubic-bezier(0.33, 0.66, 0.33, 1);
   position: sticky;
   bottom: 0;
+  max-height: 4rem;
   box-sizing: border-box;
   width: 100%;
 }
@@ -629,15 +630,17 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   list-style-type: none;
+  max-height: 4rem;
 }
 
 .mobiles {
   border: 0;
-  height: 4rem;
+  max-height: 4rem;
   display: flex;
   border-right: solid #ccc 1px;
   justify-content: center;
   align-items: center;
+  border-top: 0.5px dotted lightblue;
 }
 
 .img-round {
