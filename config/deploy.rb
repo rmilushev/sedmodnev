@@ -4,14 +4,20 @@ set :deploy_user, 'deployer'
 # setup repo details
 set :scm, :git
 set :repo_url, 'git@github.com:rmilushev/sedmodnev.git'
+set :pty, false
+set :init_system, :systemd
 # setup rbenv.
 set :rbenv_type, :system
 set :rbenv_ruby, '2.5.0'
 set :rbenv_path, '~/.rbenv'
 set :default_env, path: '~/.rbenv/shims:~/.rbenv/bin:$PATH'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-
 set :rbenv_map_bins, %w( rake gem bundle ruby rails )
+
+# Sidekiq
+SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+set :service_unit_name, "sidekiq-#{fetch(:application)}-#{fetch(:stage)}.service"
 # how many old releases do we want to keep, not much
 set :keep_releases, 5
 # files we want symlinking to specific entries in shared
