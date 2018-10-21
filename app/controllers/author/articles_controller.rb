@@ -18,20 +18,7 @@ module Author
 
       respond_to do |format|
         if @author_article.save
-          status = ['https:/', ENV['SITE_NAME'], 'articles', @author_article.id.to_s].join('/')
-          begin
-            TwitterAPI.new.client.update(status)
-            message = 'and twitted '
-          rescue StandardError => e
-            message = e.message
-          end
-
-          begin
-            FacebookAPI.new.client.put_connections(ENV['FACEBOOK_PAGE_ID'], "feed", link: status)
-            message = [message, '&& posted to facebook page'].join(' ')
-          rescue StandardError => e
-            message = [message, e.message].join(' ')
-          end
+          message = Broadcaster.new(@author_article.id).share if Rails.env.production?
           format.html { redirect_to @author_article, notice: "Article was successfully created, #{message}." }
           format.json { render :show, status: :created, location: @author_article }
         else
