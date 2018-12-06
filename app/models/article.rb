@@ -1,4 +1,4 @@
-class Article < ActiveRecord::Base
+class Article < ApplicationRecord
   include PgSearch
   has_many :images
   pg_search_scope :search_for,
