@@ -13,7 +13,7 @@
         %h1
           %span{itemprop: "headline"}= h raw @article.title
         .artcl-image
-          = image_tag attachment_url(@article, :article_image, :fit, 860, 500), class: "img-responsive"
+          = attachment_image_tag(@article, :article_image, :fit, 860, 500, class: "img-responsive")
       .art-content
         = h raw  @article.content
       - if admin_signed_in?
