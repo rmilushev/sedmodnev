@@ -22,7 +22,7 @@ set :service_unit_name, "sidekiq-#{fetch(:application)}-#{fetch(:stage)}.service
 # how many old releases do we want to keep, not much
 set :keep_releases, 5
 # files we want symlinking to specific entries in shared
-set :linked_files, %w( config/database.yml config/application.yml )
+set :linked_files, %w( config/database.yml config/application.yml config/master.key)
 
 # dirs we want symlinking to shared
 set :linked_dirs, %w( log tmp/pids tmp/cache tmp/sockets vendor/bundle
