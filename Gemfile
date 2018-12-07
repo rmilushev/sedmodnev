@@ -15,8 +15,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'simple_form'
-gem 'unicorn'
-gem 'unicorn-rails'
+# gem 'unicorn'
+# gem 'unicorn-rails'
 gem 'puma'
 gem 'test-unit'
 gem 'font-awesome-rails'
@@ -57,4 +57,5 @@ group :development do
   gem 'capistrano-rails-console'
   gem 'capistrano-rbenv'
   gem "capistrano-sidekiq"
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
 end

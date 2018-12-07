@@ -13,6 +13,7 @@ set :rbenv_path, '~/.rbenv'
 set :default_env, path: '~/.rbenv/shims:~/.rbenv/bin:$PATH'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w( rake gem bundle ruby rails )
+set :puma_init_active_record, true
 
 # Sidekiq
 SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
