@@ -50,7 +50,7 @@ group :test do
   gem 'guard'
 end
 group :development do
-  # gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.0'
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails', '~> 1.1.0'

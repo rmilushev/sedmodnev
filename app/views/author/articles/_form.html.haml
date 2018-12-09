@@ -19,7 +19,7 @@
       = f.label :content
       = f.trix_editor :content
     .form-group
-      = f.label :tag_list, 'Tags'
-      = f.collection_select(:tag_ids, Tag.order(:name), :id, :name, {}, {class: 'chosen-select', multiple: true })
+      = f.label :tags
+      = f.collection_select(:tag_list, Tag.order(:name), :name, :name)
     .form-actions
       = f.submit
