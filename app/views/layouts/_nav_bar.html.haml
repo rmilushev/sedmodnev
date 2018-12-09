@@ -6,8 +6,9 @@
       %span.icon-bar
       %span.icon-bar
     = link_to t(:brand), root_path, class: 'navbar-brand'
-  #navbar.navbar-collapse.collapse
     %ul.nav.navbar-nav
-      = render 'layouts/nav_links'
       - if admin_signed_in?
         = render 'layouts/admin_nav_links'
+  #navbar.navbar-collapse.collapse.navbar-right
+    %ul.nav.navbar-nav
+      = render 'layouts/nav_links'

@@ -1,4 +1,3 @@
-/ Static navbar
 %nav.navbar.header-v1.header-transparent.navbar-default.navbar-fixed-top
   .container
     .navbar-header.scroll-to
@@ -8,6 +7,9 @@
         %span.icon-bar
         %span.icon-bar
       = link_to t(:brand), root_path, class: "navbar-brand"
+      %ul.nav.navbar-nav
+        %li
+          = link_to t(:new_article), new_author_article_path
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
         = render 'layouts/redactor_nav_links'
