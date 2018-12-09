@@ -1,8 +1,6 @@
 set :application, 'sedmodnev'
 set :deploy_user, 'deployer'
 
-# setup repo details
-set :scm, :git
 set :repo_url, 'git@github.com:rmilushev/sedmodnev.git'
 set :pty, false
 set :init_system, :systemd
