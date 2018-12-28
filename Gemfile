@@ -40,7 +40,7 @@ gem 'bootstrap-will_paginate'
 gem 'acts-as-taggable-on'
 gem 'chosen-rails'
 gem 'pg_search'
-gem 'sidekiq'
+# gem 'sidekiq'
 group :development, :test do
   gem 'byebug'
 end
@@ -56,6 +56,6 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rails-console'
   gem 'capistrano-rbenv'
-  gem "capistrano-sidekiq"
+  # gem "capistrano-sidekiq"
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
 end
