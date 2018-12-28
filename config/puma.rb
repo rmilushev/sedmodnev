@@ -7,7 +7,6 @@
 # threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 # threads threads_count, threads_count
 threads 1, 5
-
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
 port        ENV.fetch("PORT") { 3000 }
@@ -37,5 +36,5 @@ plugin :tmp_restart
 on_worker_boot do
   require "active_record"
   ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
-  ActiveRecord::Base.establish_connection(YAML.load_file("#{app_dir}/config/database.yml")[rails_env])
+  ActiveRecord::Base.establish_connection(YAML.load_file("#{Rails.root}/config/database.yml")[ENV.fetch("RAILS_ENV")])
 end
