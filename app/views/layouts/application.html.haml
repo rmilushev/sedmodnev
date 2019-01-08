@@ -22,5 +22,7 @@
     .banners-top
       -# = render 'layouts/mainbanner' if current_page?(root_path)
       = render 'layouts/google_top'
-    = yield
+    .container-fluid
+      = render 'layouts/mainbanner'
+      = yield
     = render 'layouts/footer'
