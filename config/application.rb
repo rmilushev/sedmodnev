@@ -18,5 +18,6 @@ module Sedmodnev
     config.i18n.default_locale = :bg
     config.time_zone = 'Europe/Sofia'
     config.active_job.queue_adapter = :sidekiq
+    config.eager_load_paths << Rails.root.join('lib')
   end
 end
