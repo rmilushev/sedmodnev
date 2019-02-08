@@ -19,9 +19,6 @@
     .form_group
       = tinymce
       = f.text_area :content, class: "tinymce", rows: 40, cols: 120, plugins: ["wordcount", "paste", "uploadimage"]
-    -# .form-group
-    -#   = f.label :content
-    -#   = f.trix_editor :content
     .form-group
       = f.label :tags
       = f.collection_select(:tag_list, Tag.order(:name), :name, :name)
