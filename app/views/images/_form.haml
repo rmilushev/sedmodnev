@@ -1,0 +1,14 @@
+.conteiner
+  = form_for @image, :html => {role: 'form'} do |f|
+    -# = render 'layouts/error_messages', object: f.object
+    .form-group
+      = f.label :image, "image"
+      = f.attachment_field :picture, autofocus: true, class: 'form-control'
+    .form-group
+      = f.label :user_id
+      = f.collection_select :user_id, User.all, :id, :email, class: 'form-control'
+    .form-group
+      = f.label :article_id
+      = f.collection_select :article_id, Article.all, :id, :title, class: 'form-control'
+    .form-group
+      = f.submit "Submit", class: 'btn btn-primary'

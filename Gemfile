@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '5.2.2'
-gem 'bootsnap'
+gem 'bootsnap', github: 'ojab/bootsnap', require: false
 gem 'pg', '~> 0.15'
 gem 'mysql2'
 gem 'foreman'
@@ -30,6 +30,8 @@ gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra'
 gem 'trix-rails', require: 'trix'
 # gem 'fog', require: 'fog/rackspace'
+gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 gem 'high_voltage'
 gem 'koala'
 gem 'mechanize'

@@ -6,12 +6,18 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(image_params)
+    @image = Image.new
+    @image.picture = params[:file].tempfile
     @image.article_id = request.referer.try(:split, '/').try(:[], -2)
-    respond_to do |format|
-      if @image.save
-        format.json { render :show, status: :created, location: @image }
-      end
+    @image.user = User.last
+    if @image.save!
+      render json: {
+        image: {
+          url: Refile.attachment_url(@image, :picture),
+          picture_id: @image.picture_id
+        }
+      }, content_type: "text/html",
+      status: :created, location: @image
     end
   end
 
@@ -26,11 +32,5 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
-  end
-
-  private
-
-  def image_params
-    params.require(:image).permit(:picture, :article_id, :user_id)
   end
 end
