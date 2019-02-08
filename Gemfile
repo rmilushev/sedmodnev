@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '5.2.2'
-gem 'bootsnap', github: 'ojab/bootsnap', require: false
+gem 'bootsnap'
 gem 'pg', '~> 0.15'
 gem 'mysql2'
 gem 'foreman'
