@@ -20,10 +20,10 @@ set :service_unit_name, "sidekiq-#{fetch(:application)}-#{fetch(:stage)}.service
 # how many old releases do we want to keep, not much
 set :keep_releases, 5
 # files we want symlinking to specific entries in shared
-append :linked_files, %w( config/database.yml config/application.yml config/master.key)
+set :linked_files, %w( config/database.yml config/application.yml config/master.key)
 
 # dirs we want symlinking to shared
-append :linked_dirs, %w( log tmp/pids tmp/cache tmp/sockets vendor/bundle
+set :linked_dirs, %w( log tmp/pids tmp/cache tmp/sockets vendor/bundle
                       public/system uploads
                       tmp/uploads/store tmp/uploads/cache)
 
@@ -38,8 +38,6 @@ set(:config_files, %w(
   nginx.conf
   database.example.yml
   application.example.yml
-  unicorn.rb
-  unicorn_init.sh
 ))
 
 # log_rotation
@@ -47,9 +45,9 @@ set(:config_files, %w(
 
 # which config files should be made executable after copying
 # by deploy:setup_config
-set(:executable_config_files, %w(
-  unicorn_init.sh
-))
+# set(:executable_config_files, %w(
+#   unicorn_init.sh
+# ))
 
 # files which need to be symlinked to other parts of the
 # filesystem. For example nginx virtualhosts, log rotation
@@ -61,10 +59,10 @@ set(:symlinks, [
     source: 'nginx.conf',
     link: '/etc/nginx/sites-enabled/{{full_app_name}}'
   },
-  {
-    source: 'unicorn_init.sh',
-    link: '/etc/init.d/unicorn_{{full_app_name}}'
-  }
+  # {
+  #   source: 'unicorn_init.sh',
+  #   link: '/etc/init.d/unicorn_{{full_app_name}}'
+  # }
 ])
 
 # ,
