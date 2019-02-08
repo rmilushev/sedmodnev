@@ -1,26 +1,29 @@
-= tinymce_assets
-= form_for([:author, @author_article], :html => { role: 'form' }) do |f|
-  - if @author_article.errors.any?
-    .alert.alert-danger
-      %ul
-        - @author_article.errors.full_messages.each do |err|
-          %li= err
-  .container
-    .form-group
-      = f.label :title
-      = f.text_field :title, size: 160
-      -# %br
-    -# .form-group
-    -#   = f.label :importance
-    -#   = f.text_field :importance
-    .form-group
-      = f.label :article_image
-      = f.attachment_field :article_image
-    .form_group
-      = tinymce
-      = f.text_area :content, class: "tinymce", rows: 40, cols: 120, plugins: ["wordcount", "paste", "uploadimage"]
-    .form-group
-      = f.label :tags
-      = f.collection_select(:tag_list, Tag.order(:name), :name, :name)
-    .form-actions
-      = f.submit :Submit, class: 'btn btn-large btn-success'
+%div{"data-turbolinks" => "false"}
+  = tinymce_assets
+  = form_for([:author, @author_article], :html => { role: 'form' }) do |f|
+    - if @author_article.errors.any?
+      .alert.alert-danger
+        %ul
+          - @author_article.errors.full_messages.each do |err|
+            %li= err
+    .container
+      .form-group
+        = f.label :title
+        = f.text_field :title, size: 160
+        -# %br
+      -# .form-group
+      -#   = f.label :importance
+      -#   = f.text_field :importance
+      .form-group
+        = f.label :article_image
+        = f.attachment_field :article_image
+      .form_group
+        = tinymce
+        = f.text_area :content, class: "tinymce", rows: 40, cols: 80, plugins: ["wordcount", "paste", "uploadimage"]
+      .form-group
+        = f.label :tags
+        = f.collection_select(:tag_list, Tag.order(:name), :name, :name)
+      .form-actions
+        = f.submit :Submit, class: 'btn btn-large btn-success'
+        %br
+        %hr

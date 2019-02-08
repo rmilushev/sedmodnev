@@ -15,12 +15,13 @@
     = render 'layouts/ga_async'
   %body
     -# .container-fluid
+    = yield(:body_attributes)
     = render 'layouts/nav_bar'
     .space30
     = render 'layouts/messages'
     = render 'layouts/fb_comments'
     .banners-top
       -# = render 'layouts/mainbanner' if current_page?(root_path)
-      = render 'layouts/google_top'
+    = render 'layouts/google_top'
     = yield
     = render 'layouts/footer'
