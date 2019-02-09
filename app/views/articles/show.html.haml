@@ -16,6 +16,7 @@
           = attachment_image_tag(@article, :article_image, :fit, 860, 500, class: "img-responsive")
       .art-content
         = h raw  @article.content
+
       - if admin_signed_in?
         = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
   .show-right-adv

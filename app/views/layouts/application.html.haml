@@ -13,9 +13,7 @@
     = render 'layouts/pinterest'
     = csrf_meta_tags
     = render 'layouts/ga_async'
-  %body
-    -# .container-fluid
-    = yield(:body_attributes)
+  %body{data: {turbolinks: (content_for :turbolinks)}}
     = render 'layouts/nav_bar'
     .space30
     = render 'layouts/messages'
