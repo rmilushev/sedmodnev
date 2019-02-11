@@ -1,29 +1,33 @@
-
-= form_for([:author, @author_article], :html => { role: 'form' }) do |f|
-  - if @author_article.errors.any?
-    .alert.alert-danger
-      %ul
-        - @author_article.errors.full_messages.each do |err|
-          %li= err
-  .container
+.container.article-form
+  = form_for([:author, @author_article], :html => { role: 'form' }) do |f|
+    - if @author_article.errors.any?
+      .alert.alert-danger
+        %ul
+          - @author_article.errors.full_messages.each do |err|
+            %li= err
+    %hr
     .form-group
-      = f.label :title
-      = f.text_field :title, size: 160
-      -# %br
+      = f.text_field :title, size: 70, class: 'form-control', placeholder: 'Title'
+    %hr
+    .form-group
+      = f.label :tag
+      = f.collection_select(:tag_list, Tag.order(:name), :name, :name, class: 'form-control form-control-lg')
     -# .form-group
     -#   = f.label :importance
     -#   = f.text_field :importance
+    %hr
     .form-group
-      = f.label :article_image
-      = f.attachment_field :article_image
+      - if @author_article.article_image.present?
+        = attachment_image_tag(@author_article, :article_image, :fill, 220, 220)
+        %br
+      = f.attachment_field :article_image, class: 'form-control-file form-control-lg'
+    %hr
     .form_group
       = tinymce_assets
       = tinymce(uploadimage_default_img_class: 'img-responsive')
-      = f.text_area :content, class: "tinymce", rows: 40, cols: 70, plugins: ["wordcount", "paste", "uploadimage"]
-    .form-group
-      = f.label :tags
-      = f.collection_select(:tag_list, Tag.order(:name), :name, :name)
+      = f.text_area :content, class: "tinymce", rows: 20, cols: 60, plugins: ["wordcount", "paste", "uploadimage"]
+    %hr
     .form-actions
-      = f.submit :Submit, class: 'btn btn-large btn-success'
+      = f.submit :Submit, class: 'btn btn-lg btn-success'
       %br
       %hr
