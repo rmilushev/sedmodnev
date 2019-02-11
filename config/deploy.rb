@@ -27,7 +27,7 @@ set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle
                       public/system uploads
                       tmp/uploads/store tmp/uploads/cache)
 
-append :linked_files, "config/master.key", "config/credentials.yml.enc"
+append :linked_files, "config/master.key"
 # what specs should be run before deployment is allowed to
 # continue, see lib/capistrano/tasks/run_tests.cap
 set :tests, []
