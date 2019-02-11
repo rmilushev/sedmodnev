@@ -16,10 +16,8 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
-//= require trix
 //= require tinymce
 //= require articles
-//= require wysiwyg
 //= require chosen-jquery
 //= require core
 //= require_tree .

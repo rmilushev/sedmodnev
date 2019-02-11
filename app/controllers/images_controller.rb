@@ -13,7 +13,7 @@ class ImagesController < ApplicationController
     if @image.save!
       render json: {
         image: {
-          url: Refile.attachment_url(@image, :picture),
+          url: Refile.attachment_url(@image, :picture, :fill, 600, 400),
           picture_id: @image.picture_id
         }
       }, content_type: "text/html",
