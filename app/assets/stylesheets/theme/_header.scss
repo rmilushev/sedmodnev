@@ -1,26 +1,7 @@
-.top-bar{
-  background-color:#fff;
-  .list-inline{
-    padding: 0;
-    margin: 0;
-    li{
-      padding: 0;
-      padding-top: 10px;
-    }
-  }
-}
-.logo-bar{
-  padding:50px 0;
-  h1{
-    text-transform: uppercase;
-    margin: 0px;
-  }
-}
-
-.navbar-default .navbar-brand {
+.navbar-brand {
   color: #00283D;
   font-family: 'Playfair Display', serif;
-  font-size: 2.1em;
+  font-size: 1.6rem;
   text-shadow: 1px 1px 1px #007dbf;
   &:hover {
     color: #007dbf;
@@ -28,42 +9,45 @@
   }
 
   @media only screen and (max-width : 420px) {
-  font-size: 1.8em;
+  font-size: 1rem;
+  }
+
+  @media (min-width: 768px){
   }
 }
-.navbar-default {
-  background-color: rgba(255,255,255,0.95);
-  border: 0px;
-  @include box-shadow(0px 1px 5px rgba(190, 190, 190, 0.46));
-}
-.navbar-default .navbar-nav>li>a {
-  color: #777;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-family: $title-font;
-}
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
-  background-color: transparent;
-  color:$skincolor;
-}
-.dropdown-menu{
-  background-color: rgba(255,255,255,0.95);
-  @include border-radius(0px);
-  padding: 0px;
-  min-width: 190px;
-  border: 0px;
-  >li>a{
-    color:#777;
-    padding: 7px 20px;
-    font-weight:300;
-    border-bottom:1px solid #f5f5f5;
-    &:hover{
-      color:$skincolor;
-      background-color: #f5f5f5;
-    }
-  }
-}
+/* .navbar-default { */
+/*   background-color: rgba(255,255,255,0.95); */
+/*   border: 0px; */
+/*   @include box-shadow(0px 1px 5px rgba(190, 190, 190, 0.46)); */
+/* } */
+/* .navbar-default .navbar-nav>li>a { */
+/*   color: #777; */
+/*   font-size: 12px; */
+/*   font-weight: 600; */
+/*   text-transform: uppercase; */
+/*   font-family: $title-font; */
+/* } */
+/* .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{ */
+/*   background-color: transparent; */
+/*   color:$skincolor; */
+/* } */
+/* .dropdown-menu{ */
+/*   background-color: rgba(255,255,255,0.95); */
+/*   @include border-radius(0px); */
+/*   padding: 0px; */
+/*   min-width: 190px; */
+/*   border: 0px; */
+/*   >li>a{ */
+/*     color:#777; */
+/*     padding: 7px 20px; */
+/*     font-weight:300; */
+/*     border-bottom:1px solid #f5f5f5; */
+/*     &:hover{ */
+/*       color:$skincolor; */
+/*       background-color: #f5f5f5; */
+/*     } */
+/*   } */
+/* } */
 
 /**side panel**/
 .navmenu-default, .navbar-default .navbar-offcanvas{

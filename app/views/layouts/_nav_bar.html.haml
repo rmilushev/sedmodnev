@@ -1,14 +1,14 @@
-%nav.navbar.header-v1.header-transparent.navbar-default.navbar-fixed-top
-  .navbar-header.scroll-to
-    %button.navbar-toggle.collapsed{"data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-      %span.sr-only Toggle navigation
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
-    = link_to t(:brand), root_path, class: 'navbar-brand'
-    %ul.nav.navbar-nav
-      - if admin_signed_in?
-        = render 'layouts/admin_nav_links'
-  #navbar.navbar-collapse.collapse.navbar-right
-    %ul.nav.navbar-nav
-      = render 'layouts/nav_links'
+.container
+  %nav.navbar.navbar-expand-xs.navbar-light.bg-light.fixed-top
+    = link_to t(:brand), root_path, class: 'navbar-brand mx-auto'
+    - if admin_signed_in?
+      %form.form-inline
+        =link_to 'Admin Area', author_articles_path, class: 'btn btn-outline-success'
+    %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarNavAltMarkup.collapse.navbar-collapse
+      .navbar-nav
+        = render 'layouts/nav_links'
+        - if admin_signed_in?
+          = link_to 'Admin log out ->', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-info'
+

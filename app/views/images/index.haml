@@ -2,5 +2,5 @@
 - if admin_signed_in?
   - @images.each do |i|
     .image-index
-      =image_tag attachment_url(i, :picture, :fill, 680, 360), class: "img-responsive"
+      =image_tag attachment_url(i, :picture, :fill, 680, 360), class: "img-fluid"
 

@@ -13,14 +13,13 @@
         %h1
           %span{itemprop: "headline"}= h raw @article.title
         .artcl-image
-          = attachment_image_tag(@article, :article_image, :fit, 860, 500, class: "img-responsive")
+          = attachment_image_tag(@article, :article_image, :fit, 860, 500, class: "img-fluid")
       .art-content
         = h raw  @article.content
-
+      = render 'social_mobile'
       - if admin_signed_in?
         = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
   .show-right-adv
     = render 'layouts/right_adsense'
-= render 'social_mobile'
 = render 'layouts/adsense'
 = render 'articles/more_articles'

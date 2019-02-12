@@ -10,8 +10,8 @@
       = f.text_field :title, size: 70, class: 'form-control', placeholder: 'Title'
     %hr
     .form-group
-      = f.label :tag
-      = f.collection_select(:tag_list, Tag.order(:name), :name, :name, class: 'form-control form-control-lg')
+      %b= f.label :tag
+      = f.collection_select :tag_list, Tag.order(:name), :name, :name, class: 'form-control'
     -# .form-group
     -#   = f.label :importance
     -#   = f.text_field :importance
@@ -24,7 +24,7 @@
     %hr
     .form_group
       = tinymce_assets
-      = tinymce(uploadimage_default_img_class: 'img-responsive')
+      = tinymce(uploadimage_default_img_class: 'img-fluid')
       = f.text_area :content, class: "tinymce", rows: 20, cols: 60, plugins: ["wordcount", "paste", "uploadimage"]
     %hr
     .form-actions

@@ -4,7 +4,7 @@ module ArticlesHelper
   end
 
   def artpic(klass, height, width)
-    attachment_image_tag(klass, :article_image, :fit, height, width, class: 'img-responsive img-round')
+    attachment_image_tag(klass, :article_image, :fit, height, width, class: 'img-fluid img-round')
   end
 
   def artitem_id(i)

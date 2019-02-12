@@ -1,7 +1,5 @@
-%li
-  = link_to t(:tags), tags_path
--# %li
--#   = link_to t(:new_article), new_author_article_path
-%li
-  = link_to destroy_admin_session_path, method: 'delete' do
+%li.nav-item
+  = link_to t(:tags), tags_path, class: 'nav-link'
+%li.nav-item
+  = link_to destroy_admin_session_path, method: 'delete', class: 'nav-link' do
     %i.fa.fa-sign-out
