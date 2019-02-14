@@ -369,10 +369,10 @@ hr {
 }
 
 .cnt-art {
-  margin: 1em;
+  margin: 1rem;
   h2 {
   text-overflow: ellipsis;
-  line-height: 1.2em;
+  line-height: 1.2rem;
   max-height: 100px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
@@ -386,12 +386,12 @@ hr {
     color: black;
   }
   @media only screen and (max-width : 300px) {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 }
   h4 a {
     font-family: 'Kelly Slab', cursive;
-    font-size: 1em;
+    font-size: 1rem;
     color: rgba(0,0,0,0.5);
   }
 }
