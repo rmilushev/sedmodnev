@@ -11,10 +11,11 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{:src => "/assets/tinymce.js", :type => "text/javascript"}
     = render 'layouts/fonts'
     = render 'layouts/pinterest'
     = render 'layouts/ga_async'
-  %body{data: {turbolinks: (content_for :turbolinks)}}
+      %body
     = render 'layouts/nav_bar'
     .space30
     = render 'layouts/messages'
