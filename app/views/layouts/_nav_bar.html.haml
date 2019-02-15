@@ -1,16 +1,19 @@
 .container
   %nav.navbar.navbar-expand-xs.navbar-light.bg-light.fixed-top
-    = link_to root_path, class: 'navbar-brand mx-auto' do
-      .logobox
-        = t(:brand)
+    .logobox
+      = link_to root_path, class: 'navbar-brand mx-auto' do
+        = ENV['brand_row1']
+        %br
+        = ENV['brand_row2']
     %span.navbar-text
       =link_to searches_path, class: 'btn btn-outline-info' do
         %i.fa.fa-search.lightblue
     - if admin_signed_in?
       %form.form-inline
         =link_to 'Admin Area', author_articles_path, class: 'btn btn-outline-success'
-    %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
-      %span.navbar-toggler-icon
+    %button.navbar-toggler.order-first{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
+      %i.fa.fa-bars.lightblue
+      -# %span.navbar-toggler-icon
     #navbarNavAltMarkup.collapse.navbar-collapse
       .navbar-nav
         = render 'layouts/nav_links'

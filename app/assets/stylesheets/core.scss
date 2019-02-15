@@ -30,16 +30,11 @@ body {
 }
 
 .logobox {
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: block;
-  clear: both;
-  text-align: center;
-  // display: flex;
-  // flex-wrap: wrap;
-  // word-break: break-word;
-  // word-wrap: break-word;
+  flex-shrink: 1;
+  flex-wrap: wrap;
 }
 
 .sign-upper {
