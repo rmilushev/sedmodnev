@@ -1,7 +1,8 @@
 toolbar:
   - styleselect | bold italic | undo redo | uploadimage
-  - image | link
+  - image | media | link
 plugins:
   - uploadimage
   - link
+  - media
   - wordcount
