@@ -426,14 +426,6 @@ hr {
   }
 }
 
-// .artshow > div {
-//   border: 2px solid rgb(233, 171, 88);
-//   border-radius: 5px;
-//   background-color: rgba(233,171,88,.5);
-//   padding: 1em;
-//   color: #d9480f;
-// }
-
 .index-item {
   background: white;
   border-bottom: 1px solid #ccc;
@@ -444,12 +436,6 @@ hr {
   @media only screen and (max-width : 600px) {
     border-top: 1px solid #ccc;
   }
-  // @media only screen and (max-width : 500px) {
-  //   width: 95%;
-  // }
-  // @media only screen and (min-width : 900px) {
-  //   width: 30%;
-  // }
 }
 
 .index-item:hover {
@@ -640,4 +626,36 @@ hr {
   justify-content: center;
   align-items: center;
   padding-bottom: 30%;
+}
+
+.nav-link {
+  font-size: 1.4em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  // color: lightblue;
+  text-transform: uppercase;
+  color: white;
+  @media screen only and (max-width: 400px) {
+    font-size: 1em;
+  }
+}
+
+.squared {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-gap: 1rem;
+  @media screen only and (max-width: 400px) {
+    font-size: 0.5rem;
+  }
+  // grid-auto-rows: minmax(4em, auto);
+  // width: 500px;
+}
+
+.navbar-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  // border: red solid 2px;
+  max-width: 300px;
+  background-color: #007dbf;
+  border-radius: 3px;
 }

@@ -1,6 +1,4 @@
 - tags.each do |art_tag|
-  %li.nav-item
+  -# %li
+  .navbar-item
     = link_to art_tag.name, articles_path(tag: art_tag), class: 'nav-link'
-%li
-  = link_to searches_path do
-    %span.glyphicon.glyphicon-search.fa-2x.blue
