@@ -1,5 +1,5 @@
-- if @results
+- if @articles || @content
   = render 'search_results'
-- unless @results
+- else
   .no-results
     %h1 No results found for this query...

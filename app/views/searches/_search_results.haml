@@ -1,6 +1,14 @@
 .container
-  - @results.each do |article|
-    %h4= link_to article.title, article
-    %p
-      =l article.created_at.to_date
+  %h5= "Search results: #{@articles.count + @content.count}"
+
+  %p= "(content: #{@content.count})"
+  - @content.each do |content|
+    %p= link_to "#{content.title}, / #{l(content.created_at.to_date)}", content
     %hr
+  = will_paginate @content, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
+
+  %p= "(titles: #{@articles.count})"
+  - @articles.each do |article|
+    %p= link_to "#{article.title}, / #{l(article.created_at.to_date)}", article
+    %hr
+  = will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer

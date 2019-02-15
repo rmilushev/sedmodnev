@@ -17,6 +17,8 @@
 //= require analytics
 //= require turbolinks
 //= require tinymce
+//= require search
 //= require chosen-jquery
+//= require jquery.easy-autocomplete.min
 //= require core
 //= require_tree .

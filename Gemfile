@@ -32,16 +32,17 @@ gem 'high_voltage'
 gem 'koala'
 gem 'mechanize'
 gem 'twitter'
-gem 'pry'
 gem 'minitest'
 gem 'will_paginate', '~> 3.0.5'
-gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap4'
 gem 'acts-as-taggable-on'
 gem 'chosen-rails'
-gem 'pg_search'
+gem 'ransack'
 # gem 'sidekiq'
 group :development, :test do
   gem 'byebug'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :test do

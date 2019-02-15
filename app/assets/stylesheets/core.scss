@@ -25,9 +25,21 @@ body {
   border: dotted lightblue 2px;
 }
 
+.lightblue {
+  color: #007dbf;
+}
+
 .logobox {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  clear: both;
+  text-align: center;
+  // display: flex;
+  // flex-wrap: wrap;
+  // word-break: break-word;
+  // word-wrap: break-word;
 }
 
 .sign-upper {
@@ -372,26 +384,22 @@ hr {
   margin: 1rem;
   h2 {
   text-overflow: ellipsis;
-  line-height: 1.2rem;
   max-height: 100px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
   word-break: break-word;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  font-size: 1.6em;
-  // font-family: 'Oranienbaum', cursive;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
   font-family: 'Open Sans Condensed', sans-serif;
   a {
     color: black;
   }
-  @media only screen and (max-width : 300px) {
-    font-size: 1.2rem;
-  }
 }
   h4 a {
     font-family: 'Kelly Slab', cursive;
-    font-size: 1rem;
+   font-size: 0.8rem;
     color: rgba(0,0,0,0.5);
   }
 }
@@ -627,4 +635,11 @@ hr {
 
 .article-form {
   margin-top: 6rem;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30%;
 }

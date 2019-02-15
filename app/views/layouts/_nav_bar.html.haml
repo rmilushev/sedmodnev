@@ -1,6 +1,11 @@
 .container
   %nav.navbar.navbar-expand-xs.navbar-light.bg-light.fixed-top
-    = link_to t(:brand), root_path, class: 'navbar-brand mx-auto'
+    = link_to root_path, class: 'navbar-brand mx-auto' do
+      .logobox
+        = t(:brand)
+    %span.navbar-text
+      =link_to searches_path, class: 'btn btn-outline-info' do
+        %i.fa.fa-search.lightblue
     - if admin_signed_in?
       %form.form-inline
         =link_to 'Admin Area', author_articles_path, class: 'btn btn-outline-success'

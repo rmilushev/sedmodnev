@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :tags, except: :show
   get 'tags/:tag', to: 'articles#index'
+  get '/search', to: 'searches#search'
   resources :images, only: [:index, :create, :destroy, :show]
   post '/tinymce_assets' => 'images#create'
   resources :articles, only: [:index, :show] do

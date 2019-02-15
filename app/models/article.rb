@@ -1,9 +1,5 @@
 class Article < ApplicationRecord
-  include PgSearch
   has_many :images
-  pg_search_scope :search_for,
-                  against: [:title, :content],
-                  order_within_rank: 'articles.updated_at DESC'
 
   validates :title, presence: true
   attachment :article_image
