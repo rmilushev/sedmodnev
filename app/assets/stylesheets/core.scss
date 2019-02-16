@@ -630,8 +630,7 @@ hr {
 
 .nav-link {
   font-size: 1.4em;
-  font-family: 'Open Sans Condensed', sans-serif;
-  // color: lightblue;
+  font-family: 'Kelly Slab', cursive;
   text-transform: uppercase;
   color: white;
   @media only screen and (max-width: 500px) {
@@ -642,7 +641,7 @@ hr {
 .squared {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-gap: 1px;
+  grid-gap: 3px;
   max-width: 90%;
   @media only screen and (max-width: 500px) {
     max-width: 100%;
@@ -654,6 +653,7 @@ hr {
   justify-content: center;
   align-items: center;
   max-width: 300px;
-  background-color: #007dbf;
+  background-color: #00283d;
   color: white;
+  border-radius: 3px;
 }
