@@ -20,14 +20,14 @@ set :service_unit_name, "sidekiq-#{fetch(:application)}-#{fetch(:stage)}.service
 # how many old releases do we want to keep, not much
 set :keep_releases, 5
 # files we want symlinking to specific entries in shared
-set :linked_files, %w(config/database.yml config/application.yml)
+set :linked_files, %w(config/database.yml config/application.yml config/master.key)
 
 # dirs we want symlinking to shared
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle
                       public/system uploads
                       tmp/uploads/store tmp/uploads/cache)
 
-append :linked_files, "config/master.key"
+# append :linked_files, "config/master.key"
 # what specs should be run before deployment is allowed to
 # continue, see lib/capistrano/tasks/run_tests.cap
 set :tests, []
