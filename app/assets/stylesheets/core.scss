@@ -643,7 +643,7 @@ hr {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   grid-gap: 1px;
-  max-width: 80%;
+  max-width: 90%;
   @media only screen and (max-width: 500px) {
     max-width: 100%;
   }
