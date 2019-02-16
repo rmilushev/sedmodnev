@@ -18,5 +18,5 @@
       .squared
         = render 'layouts/nav_links'
         - if admin_signed_in?
-          = link_to 'Admin log out ->', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-info'
+          = link_to 'Admin log out ->', destroy_admin_session_path, method: :delete, class: 'navbar-item'
 

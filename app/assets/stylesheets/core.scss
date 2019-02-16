@@ -634,7 +634,7 @@ hr {
   // color: lightblue;
   text-transform: uppercase;
   color: white;
-  @media screen only and (max-width: 400px) {
+  @media only screen and (max-width: 500px) {
     font-size: 1em;
   }
 }
@@ -642,20 +642,18 @@ hr {
 .squared {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-gap: 1rem;
-  @media screen only and (max-width: 400px) {
-    font-size: 0.5rem;
+  grid-gap: 1px;
+  max-width: 80%;
+  @media only screen and (max-width: 500px) {
+    max-width: 100%;
   }
-  // grid-auto-rows: minmax(4em, auto);
-  // width: 500px;
 }
 
 .navbar-item {
   display: grid;
   justify-content: center;
   align-items: center;
-  // border: red solid 2px;
   max-width: 300px;
   background-color: #007dbf;
-  border-radius: 3px;
+  color: white;
 }
