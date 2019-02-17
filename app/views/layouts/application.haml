@@ -21,6 +21,7 @@
     = render 'layouts/fb_comments'
     .banners-top
       -# = render 'layouts/mainbanner' if current_page?(root_path)
-    = render 'layouts/google_top'
+    .container
+      = render 'layouts/google_top'
     = yield
     = render 'layouts/footer'
