@@ -5,10 +5,16 @@
   - @content.each do |content|
     %p= link_to "#{content.title}, / #{l(content.created_at.to_date)}", content
     %hr
-  = will_paginate @content, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
+  %hr
+  = will_paginate @content, page_links: false,
+    previous_label: '<- Previous', next_label: 'Next ->',
+    renderer: WillPaginate::ActionView::BootstrapLinkRenderer
 
   %p= "(titles: #{@articles.count})"
   - @articles.each do |article|
     %p= link_to "#{article.title}, / #{l(article.created_at.to_date)}", article
     %hr
-  = will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
+  %hr
+  = will_paginate @articles, page_links: false,
+    previous_label: '<- Previous', next_label: 'Next ->',
+    renderer: WillPaginate::ActionView::BootstrapLinkRenderer

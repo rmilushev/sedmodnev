@@ -97,6 +97,12 @@ namespace :deploy do
   # setup_config
   after 'deploy:setup_config', 'nginx:reload'
 
+  desc 'Restart puma'
+  task :restart_puma do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'puma:restart'
+    end
+  end
   # Restart monit so it will pick up any monit configurations
   # we've added
   # after 'deploy:setup_config', 'monit:restart'
@@ -104,4 +110,5 @@ namespace :deploy do
   # As of Capistrano 3.1, the `deploy:restart` task is not called
   # automatically.
   after 'deploy:publishing', 'deploy:restart'
+  after 'deploy:publishing', 'deploy:restart_puma'
 end
