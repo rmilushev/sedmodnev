@@ -100,7 +100,7 @@ namespace :deploy do
   desc 'Restart puma'
   task :restart_puma do
     on roles(:app), in: :sequence, wait: 5 do
-      invoke 'puma:restart'
+      invoke 'puma:start'
     end
   end
   # Restart monit so it will pick up any monit configurations
