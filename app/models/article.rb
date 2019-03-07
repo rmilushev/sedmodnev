@@ -2,6 +2,7 @@ class Article < ApplicationRecord
   has_many :images, dependent: :destroy
 
   validates :title, presence: true
+  validates :title, length: {minimum: 5, maximum: 80}
   attachment :article_image
   acts_as_taggable
 
