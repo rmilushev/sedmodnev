@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  has_many :images
+  has_many :images, dependent: :destroy
 
   validates :title, presence: true
   attachment :article_image
