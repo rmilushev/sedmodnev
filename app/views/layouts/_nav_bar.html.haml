@@ -1,18 +1,18 @@
 .container
-  %nav.navbar.navbar-expand-xs.navbar-light.bg-light.fixed-top
-    %button.navbar-toggler.order-first{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
-      %i.fa.fa-bars.lightblue
+  %nav.navbar.navbar-expand-xs.fixed-top.navbar-dark{style: "background-color: #00283d;"}
+    %button.navbar-toggler.order-first.btn-outline.btn-white{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
+      %i.fa.fa-bars.btn-white
     = link_to root_path, class: 'navbar-brand mx-auto' do
       .logobox
         = ENV['brand_row1']
         %br
         = ENV['brand_row2']
     %span.navbar-text
-      =link_to searches_path, class: 'btn btn-outline-info' do
-        %i.fa.fa-search.lightblue
+      =link_to searches_path, class: 'btn btn-outline-default navbar-btn btn-white' do
+        %i.fa.fa-search
     - if admin_signed_in?
       %form.form-inline
-        =link_to 'Admin Area', author_articles_path, class: 'btn btn-outline-success'
+        =link_to 'Admin Area', author_articles_path, class: 'btn btn-outline-primary'
     #navbarNavAltMarkup.collapse.navbar-collapse
       .squared
         = render 'layouts/nav_links'

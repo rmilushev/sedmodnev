@@ -659,7 +659,8 @@ hr {
   max-width: 300px;
   background-color: #00283d;
   color: white;
-  border-radius: 3px;
+  // border-radius: 5px;
+  border: solid 2px white;
 }
 
 .tags-label {
@@ -676,3 +677,9 @@ hr {
     }
   }
 }
+
+.btn-white {
+  color: white;
+  border-color: white;
+}
+
