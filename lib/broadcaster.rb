@@ -13,7 +13,8 @@ class Broadcaster
     end
 
     begin
-      FacebookAPI.new.client.put_connections(ENV['FACEBOOK_PAGE_ID'], "feed", link: status)
+      # FacebookAPI.new.client.put_connections(ENV['FACEBOOK_PAGE_ID'], "feed", link: status)
+      FacebookAPI.new.client.put_connections(ENV['FACEBOOK_PERSONAL_ID'], "feed", link: status)
       message = [message, '&& posted to facebook page'].join(' ')
     rescue StandardError => e
       message = [message, e.message].join(' ')
