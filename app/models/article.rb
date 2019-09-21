@@ -9,6 +9,7 @@ class Article < ApplicationRecord
   scope :desc_order, -> { order('created_at DESC') }
   scope :recent, -> { where('created_at >= ?', 5.days.ago) }
   scope :importance, -> { order('importance ASC') }
+  scope :published, -> { where(published: nil) }
 
   def og_host
     ['https://www.', ENV['SITE_NAME']].join
