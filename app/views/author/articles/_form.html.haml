@@ -20,7 +20,7 @@
       - if @author_article.article_image.present?
         = attachment_image_tag(@author_article, :article_image, :fill, 220, 220)
         %br
-      = f.attachment_field :article_image, class: 'form-control-file form-control-lg'
+      = f.attachment_field :article_image, direct: true, presigned: true, class: 'form-control-file form-control-lg'
     %hr
     .field
       = f.text_area :content, class: "tinymce", rows: 20, cols: 60
