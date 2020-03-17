@@ -38,6 +38,7 @@ gem 'will_paginate-bootstrap4'
 gem 'acts-as-taggable-on'
 gem 'chosen-rails'
 gem 'ransack'
+gem 'dalli'
 # gem 'sidekiq'
 group :development, :test do
   gem 'byebug'

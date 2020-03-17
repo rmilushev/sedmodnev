@@ -139,6 +139,7 @@ GEM
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
     crass (1.0.6)
+    dalli (2.7.10)
     debug_inspector (0.0.3)
     devise (4.7.1)
       bcrypt (~> 3.0)
@@ -433,6 +434,7 @@ DEPENDENCIES
   capistrano3-puma!
   chosen-rails
   coffee-rails
+  dalli
   devise
   faker
   figaro
