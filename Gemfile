@@ -18,7 +18,6 @@ gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'simple_form'
 gem 'puma'
 gem 'test-unit'
-gem 'font-awesome-rails'
 gem 'figaro'
 gem 'devise'
 gem 'mini_magick'
