@@ -55,7 +55,7 @@ module Author
     end
 
     def author_article_params
-      params.require(:article).permit(:title, :content, :published, :article_image, :author_id, :category_id, :golive, :importance, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+      params.require(:article).permit(:title, :content, :published, :main_image, :article_image, :author_id, :category_id, :golive, :importance, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
   end
 end

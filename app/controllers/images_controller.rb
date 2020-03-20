@@ -11,9 +11,11 @@ class ImagesController < ApplicationController
     @image.article_id = request.referer.try(:split, '/').try(:[], -2)
     @image.user = User.last
     if @image.save!
+      binding.pry
       render json: {
         image: {
-          url: Refile.attachment_url(@image, :picture, :fill, 600, 400),
+          # url: Refile.attachment_url(@image, :picture, :fill, 600, 400),
+          url: rails_blob_url(@image.picture),
           picture_id: @image.picture_id
         }
       }, content_type: "text/html",

@@ -3,7 +3,8 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
   validates :title, length: {minimum: 5, maximum: 80}
-  attachment :article_image
+  # attachment :article_image
+  has_one_attached :main_image
   acts_as_taggable
 
   scope :desc_order, -> { order('created_at DESC') }
@@ -16,7 +17,7 @@ class Article < ApplicationRecord
   end
 
   def og_image
-    [og_host, Refile.attachment_url(self, :article_image, :fit, '600', '315')].join unless self.article_image.nil?
+    # [og_host, Refile.attachment_url(self, :article_image, :fit, '600', '315')].join unless self.article_image.nil?
     nil
   end
 

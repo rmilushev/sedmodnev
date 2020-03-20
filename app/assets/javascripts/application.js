@@ -20,5 +20,6 @@
 //= require search
 //= require chosen-jquery
 //= require jquery.easy-autocomplete.min
+//= require activestorage
 //= require core
 //= require_tree .
