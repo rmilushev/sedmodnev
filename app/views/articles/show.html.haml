@@ -1,4 +1,4 @@
--# = render 'og_content'
+= render 'og_content'
 = render 'layouts/new_adsense'
 .show-page
   = render 'social_sidebar'
@@ -9,16 +9,12 @@
         %span.title-intro
           = @article.tag_list.first
           = l @article.created_at.to_date
-          -# = render 'amp_data'
+          = render 'amp_data'
         %h1
           %span{itemprop: "headline"}= h raw @article.title
         .artcl-image
-          -# = attachment_image_tag(@article, :article_image, :fit, 860, 500, class: "img-fluid")
           - if @article.main_image.attached?
-            -# = image_tag @article.main_image.variant(resize: [860, 500]), class: 'img-fluid'
             = artpic(@article, 860, 500)
-            -# = image_tag @article.main_image, class: 'img-fluid'
-            -# = image_tag ImageProcessing::Vips.source(@article.main_image).resize_to_limit!(400, 400), class: 'img-fluid'
       .art-content
         = h raw  @article.content
       = render 'social_mobile'

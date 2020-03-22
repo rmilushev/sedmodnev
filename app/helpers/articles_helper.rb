@@ -14,6 +14,17 @@ module ArticlesHelper
     end
   end
 
+  def url_pic(klass, height, width)
+    if klass.main_image.attached?
+      url_for(klass.main_image.variant(combine_options: {
+        auto_orient: true,
+        gravity: "center",
+        resize: "#{width}x#{height}^",
+        crop: "#{width}x#{height}+0+0"
+      }))
+    end
+  end
+
   def artitem_id(i)
     i < 10 ? "a#{i}" : nil
   end

@@ -1,7 +1,7 @@
 %span.d-none{itemprop: "dateCreated"}= @article.created_at.to_date
 %span.d-none{itemprop: "dateModified"}= @article.updated_at.to_date
 %span.d-none{itemprop: "datePublished"}= @article.updated_at.to_date
--# %span.d-none{itemprop: "image"}= [@article.og_host, attachment_url(@article, :article_image, :fit, 600, 400)].join unless @article.article_image.nil?
+%span.d-none{itemprop: "image"}= [@article.og_host, url_pic(@article, 600, 400)].join if @article.main_image.attached?
 %span.d-none{itemprop: "author"}= @article.author
 %div{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}
   %p.d-none{itemprop: "name"}= @article.publisher

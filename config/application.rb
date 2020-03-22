@@ -17,7 +17,7 @@ module Sedmodnev
     # the framework and any gems in your application.
     config.i18n.default_locale = :bg
     config.time_zone = 'Europe/Sofia'
-    config.active_storage.variant_processor = :vips
+    # config.active_storage.variant_processor = :vips
     # config.active_job.queue_adapter = :sidekiq
     config.eager_load_paths << Rails.root.join('lib')
   end
