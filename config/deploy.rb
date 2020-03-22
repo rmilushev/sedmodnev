@@ -25,7 +25,7 @@ set :linked_files, %w(config/database.yml config/application.yml config/master.k
 # dirs we want symlinking to shared
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle
                       public/system uploads
-                      tmp/uploads/store tmp/uploads/cache)
+                      tmp/uploads/store tmp/uploads/cache storage)
 
 # append :linked_files, "config/master.key"
 # what specs should be run before deployment is allowed to
