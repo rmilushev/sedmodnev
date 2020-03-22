@@ -63,4 +63,5 @@ group :development do
   gem 'capistrano-rbenv'
   # gem "capistrano-sidekiq"
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'rb-readline'
 end
