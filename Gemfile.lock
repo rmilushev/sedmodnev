@@ -7,23 +7,6 @@ GIT
       tinymce-rails (~> 4.0)
 
 GIT
-  remote: git://github.com/refile/refile-mini_magick.git
-  revision: 5c7c30d57a94c4104d84eb4eb9e74ca757c1a773
-  specs:
-    refile-mini_magick (0.2.0)
-      image_processing (~> 1.1)
-      mini_magick (~> 4.0)
-      refile (~> 0.6)
-
-GIT
-  remote: git://github.com/refile/refile.git
-  revision: e690bf5c2d83b3dfd805764d54e8f5daf14993b0
-  specs:
-    refile (0.7.0)
-      mime-types
-      sinatra (>= 2.0.0, <= 3.0.0)
-
-GIT
   remote: git://github.com/seuros/capistrano-puma.git
   revision: 87bfd747bd43a19b5d214e0272b76fb723cf1f5f
   specs:
@@ -86,13 +69,19 @@ GEM
     autoprefixer-rails (9.7.4)
       execjs
     aws-eventstream (1.0.3)
-    aws-sdk (2.11.463)
-      aws-sdk-resources (= 2.11.463)
-    aws-sdk-core (2.11.463)
-      aws-sigv4 (~> 1.0)
+    aws-partitions (1.285.0)
+    aws-sdk-core (3.91.1)
+      aws-eventstream (~> 1.0, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.239.0)
+      aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.11.463)
-      aws-sdk-core (= 2.11.463)
+    aws-sdk-kms (1.30.0)
+      aws-sdk-core (~> 3, >= 3.71.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.61.1)
+      aws-sdk-core (~> 3, >= 3.83.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.1)
     aws-sigv4 (1.1.1)
       aws-eventstream (~> 1.0, >= 1.0.2)
     bcrypt (3.1.13)
@@ -107,7 +96,7 @@ GEM
     buftok (0.2.0)
     builder (3.2.4)
     byebug (11.1.1)
-    capistrano (3.12.0)
+    capistrano (3.12.1)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -138,7 +127,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
+    coolline (0.5.0)
+      unicode_utils (~> 1.4)
     crass (1.0.6)
+    dalli (2.7.10)
     debug_inspector (0.0.3)
     devise (4.7.1)
       bcrypt (~> 3.0)
@@ -197,7 +189,7 @@ GEM
       http-parser (~> 1.2.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    http-form_data (2.2.0)
+    http-form_data (2.3.0)
     http-parser (1.2.1)
       ffi-compiler (>= 1.0, < 2.0)
     http_parser.rb (0.6.0)
@@ -251,8 +243,6 @@ GEM
     minitest (5.14.0)
     msgpack (1.3.3)
     multipart-post (2.1.1)
-    mustermann (1.1.1)
-      ruby2_keywords (~> 0.0.1)
     naught (1.1.0)
     nenv (0.3.0)
     net-http-digest_auth (1.4.1)
@@ -277,14 +267,14 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    pry-coolline (0.2.5)
+      coolline (~> 0.5)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.3)
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
-    rack-protection (2.0.8.1)
-      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)
@@ -323,16 +313,13 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rb-readline (0.5.5)
     rdoc (4.3.0)
-    refile-s3 (0.2.0)
-      aws-sdk (~> 2.0)
-      refile (~> 0.6.0)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
-    ruby2_keywords (0.0.2)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
     sassc (2.2.1)
@@ -352,11 +339,6 @@ GEM
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     simple_oauth (0.3.1)
-    sinatra (2.0.8.1)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.8.1)
-      tilt (~> 2.0)
     sprockets (4.0.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -398,6 +380,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.6)
+    unicode_utils (1.4.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (2.3.0)
@@ -420,6 +403,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  aws-sdk-s3
   bootsnap
   bootstrap (~> 4.3.0)
   byebug
@@ -431,6 +415,7 @@ DEPENDENCIES
   capistrano3-puma!
   chosen-rails
   coffee-rails
+  dalli
   devise
   faker
   figaro
@@ -438,6 +423,7 @@ DEPENDENCIES
   guard
   haml-rails (~> 1.0)
   high_voltage
+  image_processing (~> 1.2)
   jbuilder (~> 2.0)
   jquery-rails
   koala
@@ -446,18 +432,16 @@ DEPENDENCIES
   minitest
   pg (~> 0.15)
   pry
+  pry-coolline
   pry-rails
   puma
   rails (= 5.2.3)
   rails-i18n (~> 4.0.0)
   ransack
-  refile!
-  refile-mini_magick!
-  refile-s3
+  rb-readline
   sassc-rails
   sdoc (~> 0.4.0)
   simple_form
-  sinatra
   test-unit
   tinymce-rails
   tinymce-rails-imageupload!
@@ -470,4 +454,4 @@ DEPENDENCIES
   will_paginate-bootstrap4
 
 BUNDLED WITH
-   1.16.6
+   1.17.2

@@ -4,7 +4,14 @@ module ArticlesHelper
   end
 
   def artpic(klass, height, width)
-    attachment_image_tag(klass, :article_image, :fit, height, width, class: 'img-fluid img-round')
+    if klass.main_image.attached?
+      image_tag klass.main_image.variant(combine_options: {
+        auto_orient: true,
+        gravity: "center",
+        resize: "#{height}x#{width}^",
+        crop: "#{height}x#{width}+0+0"
+      }), class: 'img-fluid'
+    end
   end
 
   def artitem_id(i)

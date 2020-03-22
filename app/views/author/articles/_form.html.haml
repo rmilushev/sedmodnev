@@ -17,10 +17,13 @@
     -#   = f.text_field :importance
     %hr
     .field
-      - if @author_article.article_image.present?
-        = attachment_image_tag(@author_article, :article_image, :fill, 220, 220)
+      - if @author_article.main_image.attached?
+        -# = attachment_image_tag(@author_article, :article_image, :fill, 220, 220)
+        -# = image_tag @author_article.main_image.variant(resize_to_limit: [200, 200])
+        = image_tag artpic(@author_article, 200, 200)
         %br
-      = f.attachment_field :article_image, direct: true, presigned: true, class: 'form-control-file form-control-lg'
+      -# = f.attachment_field :article_image, direct: true, presigned: true, class: 'form-control-file form-control-lg'
+      = f.file_field :main_image, class: 'form-control-file form-control-lg'
     %hr
     .field
       = f.text_area :content, class: "tinymce", rows: 20, cols: 60
