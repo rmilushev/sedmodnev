@@ -439,6 +439,7 @@ DEPENDENCIES
   rails-i18n (~> 4.0.0)
   ransack
   rb-readline
+  ruby-vips
   sassc-rails
   sdoc (~> 0.4.0)
   simple_form

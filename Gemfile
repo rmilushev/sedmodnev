@@ -40,7 +40,7 @@ gem 'ransack'
 gem 'dalli'
 gem "aws-sdk-s3", require: false
 gem 'image_processing', '~> 1.2'
-# gem 'ruby-vips'
+gem 'ruby-vips'
 # gem 'sidekiq'
 group :development, :test do
   gem 'pry-coolline'
