@@ -251,6 +251,15 @@ body {
     border-bottom: 3px solid #b4e7f8;
     box-shadow: inset 0 -4px 0 #b4e7f8;
   }
+  blockquote {
+    color: rgba(0,0,0,.74);
+    padding-bottom: 2em;
+    font-style: italic;
+    border-left: 5px solid #E6E6E6;
+    margin-left: 2rem;
+    padding-left: 1rem;
+    float: left;
+  }
   @media only screen and ( max-width: 400px) {
     font-size: 1.3em;
   }

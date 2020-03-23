@@ -16,7 +16,8 @@
           - if @article.main_image.attached?
             = artpic(@article, 860, 500)
       .art-content
-        = h raw  @article.content
+        -# = h raw  @article.content
+        = raw  @article.content
       = render 'social_mobile'
       - if admin_signed_in?
         = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'

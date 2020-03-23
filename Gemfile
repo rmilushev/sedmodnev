@@ -25,8 +25,8 @@ gem 'mini_magick'
 # gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 # gem 'refile-s3'
 # gem 'sinatra'
-gem 'tinymce-rails'
-gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
+gem 'tinymce-rails' #, git: 'https://github.com/spohlenz/tinymce-rails'
+gem 'tinymce-rails-imageupload', git: 'https://github.com/PerfectlyNormal/tinymce-rails-imageupload'
 gem 'high_voltage'
 gem 'koala'
 gem 'mechanize'
@@ -61,6 +61,6 @@ group :development do
   gem 'capistrano-rails-console'
   gem 'capistrano-rbenv'
   # gem "capistrano-sidekiq"
-  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano3-puma', git: "https://github.com/seuros/capistrano-puma"
   gem 'rb-readline'
 end
