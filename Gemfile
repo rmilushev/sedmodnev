@@ -43,7 +43,6 @@ gem 'image_processing', '~> 1.2'
 # gem 'ruby-vips'
 # gem 'sidekiq'
 group :development, :test do
-  gem 'pry-coolline'
   gem 'byebug'
   gem 'pry'
   gem 'pry-rails'

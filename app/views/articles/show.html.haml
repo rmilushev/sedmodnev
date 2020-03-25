@@ -16,8 +16,10 @@
           - if @article.main_image.attached?
             = artpic(@article, 860, 500)
       .art-content
-        -# = h raw  @article.content
         = raw  @article.content
+        %span.title-intro
+          Коментари
+        = render partial: 'fb_comment', locals: { article_id: @article.id }
       = render 'social_mobile'
       - if admin_signed_in?
         = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
