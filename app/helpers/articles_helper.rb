@@ -9,7 +9,7 @@ module ArticlesHelper
         auto_orient: true,
         gravity: "center",
         resize: "#{height}x#{width}^",
-        crop: "#{height}x#{width}+0+0"
+        # crop: "#{height}x#{width}+0+0"
       }), class: 'img-fluid'
     end
   end
