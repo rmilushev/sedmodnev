@@ -696,3 +696,9 @@ hr {
 .nav-color {
   background-color: rgba(00, 134, 204, 0.6);
 }
+
+.head_google_add {
+@media(min-width: 500px) { width: 80%; height: 120px; }
+@media(min-width: 800px) { width: 80%; height: 200px; }
+@media(min-width: 1200px) { width: 80%; height: 220px; }
+}
