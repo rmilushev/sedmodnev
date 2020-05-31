@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sassc-rails'
-gem 'rails', '5.2.3'
+gem 'rails', '>=5.2.4.3'
 gem 'bootsnap'
 gem 'pg', '~> 0.15'
 gem 'foreman'
