@@ -14,7 +14,7 @@
           %span{itemprop: "headline"}= h raw @article.title
         .artcl-image
           - if @article.main_image.attached?
-            = artpic(@article, 860, 500)
+            = artpic(@article, 800, 500)
       .art-content
         = raw  @article.content
         %span.title-intro
