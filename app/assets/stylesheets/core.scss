@@ -702,3 +702,10 @@ hr {
 @media(min-width: 800px) { width: 80%; height: 200px; }
 @media(min-width: 1200px) { width: 80%; height: 220px; }
 }
+
+.side_google_ad {
+@media(min-width: 500px) { width: 80%; height: 220px; }
+@media(min-width: 800px) { width: 80%; height: 300px; }
+@media(min-width: 1200px) { width: 50%; height: 420px; }
+}
+
