@@ -16,7 +16,7 @@ module ArticlesHelper
 
   def url_pic(klass, height, width)
     if klass.main_image.attached?
-      rails_representation_url(klass.main_image)
+      rails_representation_url(klass.main_image.variant(resize: '400x300'))
     end
   end
 
