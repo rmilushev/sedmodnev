@@ -16,7 +16,7 @@ module ArticlesHelper
 
   def url_pic(klass, height, width)
     if klass.main_image.attached?
-      rails_blob_path(klass.main_image, disposition: 'attachment')
+      "https://#{ENV['SITE_NAME']}/#{rails_blob_path(klass.main_image, disposition: 'attachment')}"
       # url_for(klass.main_image.variant(combine_options: {
       #   auto_orient: true,
       #   gravity: "center",
