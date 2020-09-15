@@ -17,7 +17,6 @@
             = artpic(@article, 800, 500)
       .art-content
         = raw  @article.content
-        -# = render 'layouts/in_article_ad'
         %span.title-intro
           Коментари
         = render partial: 'fb_comment', locals: { article_id: @article.id }
