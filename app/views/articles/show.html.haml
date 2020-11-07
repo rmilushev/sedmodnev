@@ -17,7 +17,7 @@
             = artpic(@article, 800, 500)
       .art-content
         = raw  @article.content
-        - if @article.notes
+        - if @article.notes.size > 10
           = render 'payments'
         %span.title-intro
           Коментари
