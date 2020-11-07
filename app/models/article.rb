@@ -36,6 +36,11 @@ class Article < ApplicationRecord
   def publisher
     ENV['PUBLISHER']
   end
+
+  def has_notes?
+    return true if notes && notes.size > 10
+    false
+  end
   # Note that ActiveRecord ARel from() doesn't appear to accommodate "?"
   # param placeholder, hence the need for manual parameter sanitization
   # def self.tsearch_query(search_terms, limit = query_limit)
