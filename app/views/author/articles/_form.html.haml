@@ -23,6 +23,9 @@
       = f.text_area :content, class: "tinymce", rows: 20, cols: 60
       = tinymce(uploadimage_default_img_class: 'img-fluid')
     %hr
+    .field
+      = f.text_area :notes, class: "form-control", rows: 3, cols: 30
+    %hr
     .form-actions
       = f.submit :Submit, class: 'btn btn-lg btn-success'
       %br

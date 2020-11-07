@@ -709,3 +709,31 @@ hr {
 @media(min-width: 1200px) { width: 50%; height: 420px; }
 }
 
+.payments {
+  // background-color: #003957;
+  border: 3px rgba(0, 134, 204, 0.6) solid;
+  font-style: italic;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payments-buttons {
+  padding: 2rem;
+}
+
+/* Media query for mobile viewport */
+@media screen and (max-width: 400px) {
+  #paypal-button-container {
+    width: 100%;
+  }
+}
+
+/* Media query for desktop viewport */
+@media screen and (min-width: 400px) {
+  #paypal-button-container {
+    width: 250px;
+  }
+}

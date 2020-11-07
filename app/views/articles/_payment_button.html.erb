@@ -1,0 +1,10 @@
+<!-- Set up a container element for the button -->
+<div id="paypal-button-container"></div>
+
+<!-- Include the PayPal JavaScript SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_ID'] %>&currency=BGN"></script>
+
+<script>
+  // Render the PayPal button into #paypal-button-container
+  paypal.Buttons().render('#paypal-button-container');
+</script>
