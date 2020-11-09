@@ -16,4 +16,9 @@ bg:
   will_paginate:
     previous_label: "Предишни статии"
     next_label: "Следващи статии"
-
+  payment_request: "Подкрепете автора"
+  payment_sentency: "Подкрепете ни със сума от:"
+  five_units: "5 Лева"
+  ten_units: "10 Лева"
+  twenty_units: "20 Лева"
+  fifty_units: "50 Лева"

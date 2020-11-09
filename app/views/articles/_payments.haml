@@ -1,4 +1,9 @@
 .payments
-  = @article.notes
-  .payments-buttons
-    = render 'payment_button'
+  %p
+    %button.btn.btn-primary{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#collapseExample", :role => "button"}
+      = I18n.t('payment_request')
+  #collapseExample.collapse
+    .card.card-body
+      = @article.notes
+      .payments-buttons
+        = render 'payment_options'

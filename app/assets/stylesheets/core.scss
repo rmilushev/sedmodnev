@@ -710,18 +710,17 @@ hr {
 }
 
 .payments {
-  // background-color: #003957;
-  border: 3px rgba(0, 134, 204, 0.6) solid;
+  text-align: center;
   font-style: italic;
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.payments-buttons {
-  padding: 2rem;
+.payments-options {
+  display: flex;
+  padding-top: 2rem;
 }
 
 /* Media query for mobile viewport */
