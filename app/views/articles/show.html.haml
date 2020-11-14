@@ -19,6 +19,7 @@
         = raw  @article.content
         - if @article.has_notes?
           = render 'payments'
+          = render 'payments_modal'
         %span.title-intro
           Коментари
         = render partial: 'fb_comment', locals: { article_id: @article.id }

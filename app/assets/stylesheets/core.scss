@@ -710,19 +710,52 @@ hr {
 }
 
 .payments {
-  text-align: center;
-  font-style: italic;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.payments-options {
-  display: flex;
-  padding-top: 2rem;
+// .payment-request p {
+//   // z-index: 2;
+//   background-color: rgba(0, 134, 204, 0.6);
+// }
+
+.payment-request {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+  background: image-url('sea_waves.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 134, 204, 0.6);
+  // z-index: 1;
+  opacity: 0.9;
 }
 
+.payment-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 1rem;
+}
+
+.payment-notes {
+  padding: 2rem;
+  background-color: rgba(0, 134, 204, 0.3);
+  font-family: 'Old Standard TT', serif;
+  border-radius: 4rem;
+}
+
+.btn-outline-primary {
+  color: white;
+  border-color: white;
+  margin: 0.3rem;
+}
 /* Media query for mobile viewport */
 @media screen and (max-width: 400px) {
   #paypal-button-container {
