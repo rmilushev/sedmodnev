@@ -310,7 +310,6 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rb-readline (0.5.5)
-    rdoc (4.3.0)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -326,9 +325,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sdoc (0.4.2)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
     sexp_processor (4.14.1)
     shellany (0.0.1)
     simple_form (5.0.2)
@@ -434,7 +430,6 @@ DEPENDENCIES
   ransack
   rb-readline
   sassc-rails
-  sdoc (~> 0.4.0)
   simple_form
   test-unit
   tinymce-rails

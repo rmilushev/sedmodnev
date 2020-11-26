@@ -13,7 +13,6 @@ gem 'whenever'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'simple_form'
 gem 'puma'
