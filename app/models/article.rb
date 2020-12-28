@@ -16,10 +16,6 @@ class Article < ApplicationRecord
     ['https://www.', ENV['SITE_NAME']].join
   end
 
-  def og_image
-    [og_host, url_pic(self, '600', '315')].join unless self.article_image.nil?
-  end
-
   def og_fullpath
     [og_host, '/articles/', self.id].join
   end
