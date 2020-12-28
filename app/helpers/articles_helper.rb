@@ -14,6 +14,16 @@ module ArticlesHelper
     end
   end
 
+  def img_tag(inst, height, width)
+    if inst.picture.attached?
+      image_tag inst.picture.variant(combine_options: {
+        auto_orient: true,
+        gravity: "center",
+        resize: "#{height}x#{width}^",
+      }), class: 'img-fluid'
+    end
+  end
+
   def url_pic(klass, height, width)
     if klass.main_image.attached?
       rails_representation_url(klass.main_image.variant(resize: '400x300'))

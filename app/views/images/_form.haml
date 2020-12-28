@@ -3,7 +3,7 @@
     -# = render 'layouts/error_messages', object: f.object
     .form-group
       = f.label :image, "image"
-      = f.attachment_field :picture, autofocus: true, direct: true, presigned: true, class: 'form-control-file form-control-lg'
+      = f.attachment_field :picture, autofocus: true, direct_upload: true, presigned: true, class: 'form-control-file form-control-lg'
     .form-group
       = f.label :user_id
       = f.collection_select :user_id, User.all, :id, :email, class: 'form-control'

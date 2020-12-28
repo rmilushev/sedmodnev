@@ -17,8 +17,7 @@ class Article < ApplicationRecord
   end
 
   def og_image
-    # [og_host, Refile.attachment_url(self, :article_image, :fit, '600', '315')].join unless self.article_image.nil?
-    nil
+    [og_host, url_pic(self, '600', '315')].join unless self.article_image.nil?
   end
 
   def og_fullpath

@@ -17,7 +17,7 @@
       - if @author_article.main_image.attached?
         = artpic(@author_article, 200, 200)
         %br
-      = f.file_field :main_image, class: 'form-control-file form-control-lg'
+      = f.file_field :main_image, class: 'form-control-file form-control-lg', direct_upload: true
     %hr
     .field
       = f.text_area :content, class: "tinymce", rows: 20, cols: 60

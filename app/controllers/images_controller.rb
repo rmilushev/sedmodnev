@@ -2,7 +2,9 @@ class ImagesController < ApplicationController
   protect_from_forgery except: :create
 
   def index
-    @images = Image.desc_order
+    @images =
+      Image.desc_order
+      .paginate(page: params[:page], per_page: 17)
   end
 
   def create
