@@ -1,0 +1,13 @@
+%hr
+= I18n.t('payment_sentency')
+%br
+.payment-options
+  %button.btn.btn-outline-primary{"data-target" => "#exampleModal", "data-amount" => "5", "data-toggle" => "modal", :type => "button"}
+    = I18n.t('five_units')
+  %button.btn.btn-outline-primary{"data-target" => "#exampleModal", "data-amount" => "10", "data-toggle" => "modal", :type => "button"}
+    = I18n.t('ten_units')
+  %button.btn.btn-outline-primary{"data-target" => "#exampleModal", "data-amount" => "20", "data-toggle" => "modal", :type => "button"}
+    = I18n.t('twenty_units')
+  -# %button.btn.btn-outline-primary
+    = I18n.t('fifty_units')
+  -# = render 'payment_buttons'

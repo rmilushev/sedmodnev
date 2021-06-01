@@ -1,12 +1,27 @@
 class ImagesController < ApplicationController
   protect_from_forgery except: :create
 
-  def create
-    @image = Image.new(image_params)
-    @image.save
+  def index
+    @images =
+      Image.desc_order
+      .paginate(page: params[:page], per_page: 17)
+  end
 
-    respond_to do |format|
-      format.json { render json: { url: Refile.attachment_url(@image, :picture), picture_id: @image.picture_id } }
+  def create
+    @image = Image.new
+    @image.article_id = request.referer.try(:split, '/').try(:[], -2)
+    @image.picture = params[:file]
+    @image.user = User.last
+    if @image.save!
+      render json: {
+        image: {
+          url: rails_blob_url(@image.picture),
+          width: '600',
+          height: '400',
+          picture_id: @image.picture_id
+        }
+      }, content_type: "text/html",
+      status: :created, location: @image
     end
   end
 
@@ -19,9 +34,13 @@ class ImagesController < ApplicationController
     end
   end
 
+  def show
+    @image = Image.find(params[:id])
+  end
+
   private
 
   def image_params
-    params.require(:image).permit(:picture, :article_id, :user_id)
+    params.require(:image).permit(:file, :picture)
   end
 end

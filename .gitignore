@@ -11,8 +11,13 @@
 /log/*
 !/log/.keep
 /tmp
+/storage
 
 # Ignore application configuration
 /config/application.yml
 # Ignore deploy configuration for production
 config/deploy/production.rb
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+.DS_Store

@@ -1,18 +1,21 @@
-/ Static navbar
-%nav.navbar.header-v1.header-transparent.navbar-default.navbar-fixed-top
-  .container
-    .navbar-header.scroll-to
-      %button.navbar-toggle.collapsed{"data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      -# = link_to root_path do
-        -# .brand-logo
-      = link_to t(:brand), root_path, class: 'navbar-brand'
-      -# = render 'layouts/search'
-    #navbar.navbar-collapse.collapse
-      %ul.nav.navbar-nav.navbar-right
+.container
+  %nav.navbar.navbar-expand-xs.fixed-top.navbar-dark.nav-color
+    %button.navbar-toggler.order-first.btn-outline.btn-white{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
+      %i.fa.fa-bars.btn-white
+    = link_to root_path, class: 'navbar-brand mx-auto' do
+      .logobox
+        = ENV['brand_row1']
+        %br
+        = ENV['brand_row2']
+    %span.navbar-text
+      =link_to searches_path, class: 'btn btn-outline-default navbar-btn btn-white' do
+        %i.fa.fa-search
+    - if admin_signed_in?
+      %form.form-inline
+        =link_to 'Admin Area', author_articles_path, class: 'btn btn-outline-primary'
+    #navbarNavAltMarkup.collapse.navbar-collapse
+      .squared
         = render 'layouts/nav_links'
         - if admin_signed_in?
-          = render 'layouts/admin_nav_links'
+          = link_to 'Admin log out', destroy_admin_session_path, method: :delete, class: 'navbar-item'
+

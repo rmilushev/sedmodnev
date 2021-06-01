@@ -1,17 +1,13 @@
-.article-container
-  -# = render 'layouts/search'
-
-  -# - @tags.each do |art_tag|
-  -#   = link_to art_tag.name, articles_path(tag: art_tag), class: "btn btn-theme btn-large"
-  - @articles.each do |art|
-    .article-item
-    .row
-      .col-lg-8.col-md-9.col-xs-12.art-image
-        = link_to art, data: { turbolinks: false} do
-          = image_tag attachment_url(art, :article_image, :fill, 860, 370), class: "img-responsive"
-          .article-title.text-center
-            %h1
-              %span= art.title
-        -# .tags-index
-          -# = raw art.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-  = will_paginate @author_articles
+.container
+  = render 'layouts/current_tag'
+  = render 'layouts/mainbanner'
+  .artshow
+    - @articles.first(15).each.with_index(1) do |article, i|
+      = render partial: 'item', object: article, locals: { index: i }, id: artitem_id(i)
+  %hr
+.container
+  =render 'layouts/feed_ad_block'
+.container
+  = will_paginate @articles, page_links: false,
+    previous_label: '<- Previous', next_label: 'Next ->',
+    renderer: WillPaginate::ActionView::BootstrapLinkRenderer

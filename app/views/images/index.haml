@@ -1,0 +1,10 @@
+%h2= "Images count: #{@images.count}"
+- if admin_signed_in?
+  .images-preview.container
+    - @images.each do |i|
+      .image-index
+        = img_tag(i, 200, 200)
+        %hr
+    = will_paginate @images, page_links: true,
+      previous_label: '<- Previous', next_label: 'Next ->',
+      renderer: WillPaginate::ActionView::BootstrapLinkRenderer

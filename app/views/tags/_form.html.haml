@@ -4,4 +4,7 @@
     = f.label :name, "Name"
     = f.text_field :name, autofocus: true, class: 'form-control'
   .form-group
+    = f.label :active
+    = f.check_box :active, class: 'form-control'
+  .form-group
     = f.submit "Submit", class: 'btn btn-primary'

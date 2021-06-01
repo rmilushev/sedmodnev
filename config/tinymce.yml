@@ -1,0 +1,18 @@
+# toolbar:
+#   - styleselect | bold italic | undo redo | uploadimage
+#   - media | link
+# plugins:
+#   - uploadimage
+#   - link
+#   - media
+#   - wordcount
+#
+# height: 500
+menubar: false
+toolbar:
+  - styleselect | bold italic backcolor| undo redo | uploadimage |  formatselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help
+  - media | link
+plugins:
+  - advlist autolink lists link uploadimage charmap print preview anchor
+  - searchreplace visualblocks code fullscreen
+  - insertdatetime media table paste code help wordcount

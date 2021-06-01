@@ -1,27 +1,33 @@
 set :application, 'sedmodnev'
 set :deploy_user, 'deployer'
 
-# setup repo details
-set :scm, :git
-set :repo_url, 'https://github.com/rmilushev/sedmodnev.git'
+set :repo_url, 'git@github.com:rmilushev/sedmodnev.git'
+set :pty, false
+set :init_system, :systemd
 # setup rbenv.
 set :rbenv_type, :system
-set :rbenv_ruby, '2.3.1'
+set :rbenv_ruby, '2.5.0'
 set :rbenv_path, '~/.rbenv'
 set :default_env, path: '~/.rbenv/shims:~/.rbenv/bin:$PATH'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-
 set :rbenv_map_bins, %w( rake gem bundle ruby rails )
+set :puma_init_active_record, true
+
+# Sidekiq
+# SSHKit.config.command_map[:sidekiq] = "bundle exec sidekiq"
+# SSHKit.config.command_map[:sidekiqctl] = "bundle exec sidekiqctl"
+# set :service_unit_name, "sidekiq-#{fetch(:application)}-#{fetch(:stage)}.service"
 # how many old releases do we want to keep, not much
 set :keep_releases, 5
 # files we want symlinking to specific entries in shared
-set :linked_files, %w( config/database.yml config/application.yml )
+set :linked_files, %w(config/database.yml config/application.yml config/master.key)
 
 # dirs we want symlinking to shared
-set :linked_dirs, %w( log tmp/pids tmp/cache tmp/sockets vendor/bundle
+set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle
                       public/system uploads
-                      tmp/uploads/store tmp/uploads/cache)
+                      tmp/uploads/store tmp/uploads/cache storage)
 
+# append :linked_files, "config/master.key"
 # what specs should be run before deployment is allowed to
 # continue, see lib/capistrano/tasks/run_tests.cap
 set :tests, []
@@ -33,8 +39,6 @@ set(:config_files, %w(
   nginx.conf
   database.example.yml
   application.example.yml
-  unicorn.rb
-  unicorn_init.sh
 ))
 
 # log_rotation
@@ -42,9 +46,9 @@ set(:config_files, %w(
 
 # which config files should be made executable after copying
 # by deploy:setup_config
-set(:executable_config_files, %w(
-  unicorn_init.sh
-))
+# set(:executable_config_files, %w(
+#   unicorn_init.sh
+# ))
 
 # files which need to be symlinked to other parts of the
 # filesystem. For example nginx virtualhosts, log rotation
@@ -56,10 +60,10 @@ set(:symlinks, [
     source: 'nginx.conf',
     link: '/etc/nginx/sites-enabled/{{full_app_name}}'
   },
-  {
-    source: 'unicorn_init.sh',
-    link: '/etc/init.d/unicorn_{{full_app_name}}'
-  }
+  # {
+  #   source: 'unicorn_init.sh',
+  #   link: '/etc/init.d/unicorn_{{full_app_name}}'
+  # }
 ])
 
 # ,
@@ -93,6 +97,12 @@ namespace :deploy do
   # setup_config
   after 'deploy:setup_config', 'nginx:reload'
 
+  desc 'Restart puma'
+  task :restart_puma do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'puma:start'
+    end
+  end
   # Restart monit so it will pick up any monit configurations
   # we've added
   # after 'deploy:setup_config', 'monit:restart'
@@ -100,4 +110,5 @@ namespace :deploy do
   # As of Capistrano 3.1, the `deploy:restart` task is not called
   # automatically.
   after 'deploy:publishing', 'deploy:restart'
+  after 'deploy:publishing', 'deploy:restart_puma'
 end

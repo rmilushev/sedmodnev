@@ -1,35 +1,32 @@
-- content_for :head do
-  = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
-  = tag :meta, name: "twitter:card", content: "summary_large_image"
-  = tag :meta, name: "twitter:site", content: "@BurgasReporter"
-  = tag :meta, property: "og:url", content: request.original_url
-  = tag :meta, property: "og:type", content: "article"
-  = tag :meta, property: "og:title", content: @article.title
-  = tag :meta, property: "og:description", content: strip_tags(@article.content).truncate_words(20, omission: '  ... ')
-  = tag :meta, property: "og:published_time", content: @article.created_at.strftime("%d-%m-%Y %H:%M")
-  = tag :meta, property: "og:image", content: request.protocol + request.host + attachment_url(@article, :article_image, :fit, 440, 240) unless @article.article_image.nil?
-  = render 'layouts/new_adsense'
--# .row
-.artshow
-  .art-wrap
-    = render 'layouts/wbanner' unless current_page?(root_path)
-    %h1
-      =h raw @article.title
-    %p.dateformat
-      =l @article.created_at.to_date
-    .artcl-image
-      =image_tag attachment_url(@article, :article_image, :fill, 680, 360), class: "img-responsive"
-    - if admin_signed_in?
-      .article-tags
-        %h4 Tag List:
-        %p= @article.tag_list
-    .art-content
-      %p
-        =h raw  @article.content
-    -# = render 'share'
-    = render 'layouts/fb_like'
-    = render 'layouts/twitt_share'
-    = render 'layouts/adsense'
-    -# = render 'disqus'
-    - if admin_signed_in?
-      = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
+= render 'og_content'
+= render 'layouts/new_adsense'
+.show-page
+  = render 'social_sidebar'
+  .container
+    .flex-center
+      -# = render 'layouts/show_banner'
+      %div{itemscope: "", itemtype: "http://schema.org/NewsArticle"}
+        %span.title-intro
+          = @article.tag_list.first
+          = l @article.created_at.to_date
+          = render 'amp_data'
+        %h1
+          %span{itemprop: "headline"}= h raw @article.title
+        .artcl-image
+          - if @article.main_image.attached?
+            = artpic(@article, 800, 500)
+      .art-content
+        = raw  @article.content
+        - if @article.has_notes?
+          = render 'payments'
+          = render 'payments_modal'
+        %span.title-intro
+          Коментари
+        = render partial: 'fb_comment', locals: { article_id: @article.id }
+      = render 'social_mobile'
+      - if admin_signed_in?
+        = link_to t(:edit_article), edit_author_article_path(@article), class: 'btn btn-warning'
+  .show-right-adv
+    = render 'layouts/right_adsense'
+= render 'layouts/adsense'
+= render 'articles/more_articles'

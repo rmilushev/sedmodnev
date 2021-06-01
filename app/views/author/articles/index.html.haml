@@ -1,10 +1,11 @@
-= will_paginate @author_articles
+= will_paginate @author_articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
 %table.table.table-striped.table-fixed
   %thead
     %tr
       %th Published at:
       %th Title
-      %th Importance
+      -# %th Range
+      -# %th Importance
       %th Seen (times)
 
   %tbody
@@ -12,10 +13,11 @@
       %tr
         %td= l article.created_at.to_date
         %td= link_to article.title, article
-        %td= article.importance
+        -# %td= radio_button_tag :top_article, 'top_article'
+        -# %td= article.importance
         -# %td
-          -# - tick_bool(article.on_top?)
-        %td wip for seen
+          - tick_bool(article.on_top?)
+        -# %td wip for seen
         %td= link_to "Edit", edit_author_article_path(article), 'data-no-turbolink' => true, class: "btn btn-theme, btn-success"
         %td= link_to "Delete", author_article_path(article), data: { confirm: 'Are you sure?' }, method: 'delete', class: "btn btn-theme-bg"
-= will_paginate @author_articles
+= will_paginate @author_articles, page_links: false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer

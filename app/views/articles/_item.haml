@@ -1,0 +1,8 @@
+.index-item
+  .img-art
+    = link_to item, 'data-turbolinks' => 'false' do
+      = artpic(item, 400, 300)
+  .cnt-art
+    %h4= link_to(item.tags.first, articles_path(tag: item.tags.first)) if item.tags.present?
+    %h2= link_to item.title, item, 'data-turbolinks' => 'false'
+    %p= l item.created_at.to_date

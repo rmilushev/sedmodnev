@@ -1,0 +1,11 @@
+%span.d-none{itemprop: "dateCreated"}= @article.created_at.to_date
+%span.d-none{itemprop: "dateModified"}= @article.updated_at.to_date
+%span.d-none{itemprop: "datePublished"}= @article.updated_at.to_date
+%span.d-none{itemprop: "image"}= [@article.og_host, url_pic(@article, 600, 400)].join if @article.main_image.attached?
+%span.d-none{itemprop: "author"}= @article.author
+%div{itemprop:  "publisher", :itemscope => "itemscope", :itemtype => "https://schema.org/Organization"}
+  %p.d-none{itemprop: "name"}= @article.publisher
+  %span{:itemprop => "logo", :itemscope => "", :itemtype => "https://schema.org/ImageObject"}
+    %meta{:content => "#{@article.og_host}/logo.png", :itemprop => "url"}/
+    %meta{:content => "700", :itemprop => "width"}/
+    %meta{:content => "120", :itemprop => "height"}/

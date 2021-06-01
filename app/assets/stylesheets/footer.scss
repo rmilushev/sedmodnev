@@ -1,0 +1,75 @@
+.footer-title {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  box-shadow: -3px -3px 3px 0 rgba(0,0,0,0.19), 3px 0 3px 0 rgba(0,0,0,0.19), 0 3px 3px 0 rgba(0,0,0,0.23);
+  clear: both;
+  display: block;
+  position: relative;
+  text-align: center;
+  padding: 2rem 0 2rem 0;
+  h1 {
+    color: #00283D;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 1px #007dbf;
+    margin-bottom: 1rem;
+    &:hover {
+      color: #007dbf;
+      text-shadow: 1px 1px 2px #00283d;
+    }
+  }
+}
+
+
+/*************soical icons**********/
+.social-1 {
+    margin: 0;
+    padding: 0;
+}
+.social-1 li{
+    padding: 0px;
+}
+.social-1 li a i{
+    width:32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color:#fff;
+    font-size: 16px;
+    @media only screen and (max-width : 420px) {
+      width: 4rem;
+      height: 4rem;
+      line-height: 4rem;
+      font-size: 3rem;
+      border-radius: 4px;
+    }
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+}
+.social-1 li a i:hover{
+    opacity: 0.8;
+}
+.social-1 li a i.fa-facebook{
+    background-color: #3b5998;
+}
+.social-1 li a i.fa-twitter{
+    background-color: #1da1f2;
+}
+.social-1 li a i.fa-pinterest{
+    background-color: #bd081c;
+}
+.social-1 li a i.fa-linkedin{
+    background-color: #0077b5;
+}
+.social-1 li a i.fa-instagram{
+    background-color: #3F729B;
+}
+.social-1 li a i.fa-youtube{
+    background-color: #ff0000;
+}

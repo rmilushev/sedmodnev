@@ -1,14 +1,41 @@
-class Article < ActiveRecord::Base
-  include PgSearch
-  pg_search_scope :search_for, against: %i(title content)
+class Article < ApplicationRecord
+  has_many :images, dependent: :destroy
+
   validates :title, presence: true
-  attachment :article_image
+  validates :title, length: {minimum: 5, maximum: 80}
+  # attachment :article_image
+  has_one_attached :main_image
   acts_as_taggable
 
   scope :desc_order, -> { order('created_at DESC') }
   scope :recent, -> { where('created_at >= ?', 5.days.ago) }
   scope :importance, -> { order('importance ASC') }
+  scope :published, -> { where(published: nil) }
 
+  def og_host
+    ['https://www.', ENV['SITE_NAME']].join
+  end
+
+  def og_fullpath
+    [og_host, '/articles/', self.id].join
+  end
+
+  def og_content
+    ActionController::Base.helpers.strip_tags(self.content).truncate_words(20, omission: '  ... ')
+  end
+
+  def author
+    ENV['DEFAULT_AUTHOR']
+  end
+
+  def publisher
+    ENV['PUBLISHER']
+  end
+
+  def has_notes?
+    return true if notes && notes.size > 10
+    false
+  end
   # Note that ActiveRecord ARel from() doesn't appear to accommodate "?"
   # param placeholder, hence the need for manual parameter sanitization
   # def self.tsearch_query(search_terms, limit = query_limit)

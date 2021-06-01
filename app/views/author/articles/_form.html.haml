@@ -1,25 +1,33 @@
-= form_for([:author, @author_article], :html => { role: 'form' }) do |f|
-  - if @author_article.errors.any?
-    .alert.alert-danger
-      %ul
-        - @author_article.errors.full_messages.each do |err|
-          %li= err
-  .container
-    .form-group
-      = f.label :title
-      = f.text_field :title, size: 160
-      -# %br
-    .form-group
-      = f.label :importance
-      = f.text_field :importance
-    .form-group
-      = f.label :article_image
-      = f.attachment_field :article_image
-    .form-group
-      = f.label :content
-      = f.trix_editor :content
-    .form-group
-      = f.label :tag_list, 'Tags'
-      = f.collection_select(:tag_ids, Tag.order(:name), :id, :name, {}, {class: 'chosen-select', multiple: true })
+.container.article-form
+  = form_for([:author, @author_article], :html => { role: 'form' }) do |f|
+    - if @author_article.errors.any?
+      .alert.alert-danger
+        %ul
+          - @author_article.errors.full_messages.each do |err|
+            %li= err
+    %hr
+    .field
+      = f.text_field :title, size: 80, class: 'form-control', placeholder: 'Title'
+    %hr
+    .field
+      %b= f.label :tag
+      = f.collection_select :tag_list, Tag.order(:name), :name, :name, class: 'form-control'
+    %hr
+    .field
+      - if @author_article.main_image.attached?
+        = artpic(@author_article, 200, 200)
+        %br
+      = f.file_field :main_image, class: 'form-control-file form-control-lg', direct_upload: true
+    %hr
+    .field
+      = f.text_area :content, class: "tinymce", rows: 20, cols: 60
+      = tinymce(uploadimage_default_img_class: 'img-fluid')
+    %hr
+    .field
+      %b= f.label 'Payment request from Author'
+      = f.text_area :notes, class: "form-control", rows: 3, cols: 30
+    %hr
     .form-actions
-      = f.submit
+      = f.submit :Submit, class: 'btn btn-lg btn-success'
+      %br
+      %hr
