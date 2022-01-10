@@ -41,6 +41,14 @@ gem "aws-sdk-s3", require: false
 gem 'image_processing', '~> 1.2'
 # gem 'ruby-vips'
 # gem 'sidekiq'
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails', '~> 1.1.0'
+gem 'capistrano-rails-console'
+gem 'capistrano-rbenv'
+# gem "capistrano-sidekiq"
+gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+
 group :development, :test do
   gem 'byebug'
   gem 'pry'
@@ -53,12 +61,5 @@ group :test do
 end
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.1.0'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rbenv'
-  # gem "capistrano-sidekiq"
-  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'rb-readline'
 end
