@@ -7,7 +7,7 @@ GIT
       tinymce-rails (~> 4.0)
 
 GIT
-  remote: https://github.com/seuros/capistrano-puma
+  remote: https://github.com/seuros/capistrano-puma.git
   revision: f9801f6762d152c5d9da18ce726c7561cc4f9a8b
   specs:
     capistrano3-puma (5.2.0)
