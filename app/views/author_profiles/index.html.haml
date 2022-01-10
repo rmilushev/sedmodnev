@@ -1,0 +1,29 @@
+%h1 Listing author_profiles
+
+%table
+  %thead
+    %tr
+      %th Admin
+      %th Name
+      %th Image
+      %th Description
+      %th Enabled
+      %th
+      %th
+      %th
+
+  %tbody
+    - @author_profiles.each do |author_profile|
+      %tr
+        %td= author_profile.admin
+        %td= author_profile.name
+        %td= author_profile.image
+        %td= author_profile.description
+        %td= author_profile.enabled
+        %td= link_to 'Show', author_profile
+        %td= link_to 'Edit', edit_author_profile_path(author_profile)
+        %td= link_to 'Destroy', author_profile, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Author profile', new_author_profile_path

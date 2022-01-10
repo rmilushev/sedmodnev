@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Admin:
+  = @author_profile.admin
+%p
+  %b Name:
+  = @author_profile.name
+%p
+  %b Image:
+  = @author_profile.image
+%p
+  %b Description:
+  = @author_profile.description
+%p
+  %b Enabled:
+  = @author_profile.enabled
+
+= link_to 'Edit', edit_author_profile_path(@author_profile)
+\|
+= link_to 'Back', author_profiles_path
