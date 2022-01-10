@@ -6,7 +6,7 @@ set :pty, false
 set :init_system, :systemd
 # setup rbenv.
 set :rbenv_type, :system
-set :rbenv_ruby, '2.7.4'
+set :rbenv_ruby, '2.5.0'
 set :rbenv_path, '~/.rbenv'
 set :default_env, path: '~/.rbenv/shims:~/.rbenv/bin:$PATH'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
